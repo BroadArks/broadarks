@@ -5,12 +5,13 @@ import {
   Founders,
   Story,
   Timeline,
+  VisionMission,
 } from "@/components/sections/AboutSections";
 
 export const metadata = {
   title: "About",
   description:
-    "BroadArks was founded in March 2020 by Pankaj and Dr. Kaveri Dutta to bring enterprise, technology and human development under one shared ambition.",
+    "BroadArks was founded in March 2020 by Mr. Pankaj Dutta and Dr. Kaveri Dutta to bring enterprise, technology and human development under one shared ambition.",
 };
 
 export default function AboutPage() {
@@ -20,7 +21,7 @@ export default function AboutPage() {
         eyebrow="About BroadArks"
         title="One company, four ways of asking"
         accent="the same question."
-        lead="Founded in March 2020 by Pankaj and Dr. Kaveri Dutta, BroadArks brings enterprise, technology and human development under one shared ambition: to create meaningful progress for people, businesses and communities."
+        lead="Founded in March 2020 by Mr. Pankaj Dutta and Dr. Kaveri Dutta, BroadArks brings enterprise, technology and human development under one shared ambition: to create meaningful progress for people, businesses and communities."
         meta={[
           { label: "Founded", value: "March 2020" },
           { label: "Headquarters", value: "New Delhi, India" },
@@ -29,6 +30,7 @@ export default function AboutPage() {
         ]}
       />
       <AboutIntro />
+      <VisionMission />
       <Story />
       <StatsBand tone="shell" />
       <Founders />

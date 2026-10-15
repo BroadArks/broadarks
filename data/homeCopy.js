@@ -36,7 +36,7 @@ const DIRECTION_1 = {
 
   belief: {
     label: "Our model",
-    note: "Established in March 2020 by Pankaj and Dr. Kaveri Dutta.",
+    note: "Established in March 2020 by Mr. Pankaj Dutta and Dr. Kaveri Dutta.",
     body:
       "Sustainable social and economic progress cannot happen in silos. BroadArks operates at the intersection of business strategy, digital tools, and workforce development to build scalable, repeatable models for growth across India.",
     pillars: [
@@ -157,7 +157,7 @@ const DIRECTION_2 = {
     lead:
       "BroadArks serves as the foundation for multi-sector initiatives that expand human possibility and build sustainable futures across India.",
     primary: { href: "/divisions", label: "View our divisions" },
-    secondary: { href: "/about", label: "Our vision" },
+    secondary: { href: "/about#vision", label: "Our vision" },
     railLabel: "The divisions",
   },
 
@@ -168,7 +168,7 @@ const DIRECTION_2 = {
 
   belief: {
     label: "Our foundation",
-    note: "Established in March 2020 by Pankaj and Dr. Kaveri Dutta.",
+    note: "Established in March 2020 by Mr. Pankaj Dutta and Dr. Kaveri Dutta.",
     body:
       "Real impact occurs when technical innovation creates clear pathways for people to thrive. We combine business operations, technology systems, and community skilling into a single framework designed for nationwide execution.",
     pillars: [

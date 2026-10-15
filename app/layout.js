@@ -23,7 +23,7 @@ export const metadata = {
     template: "%s · BroadArks",
   },
   description:
-    "Founded in 2020 by Pankaj and Dr. Kaveri Dutta, BroadArks brings enterprise, technology and human development under one shared ambition: meaningful progress for people, businesses and communities.",
+    "Founded in 2020 by Mr. Pankaj Dutta and Dr. Kaveri Dutta, BroadArks brings enterprise, technology and human development under one shared ambition: meaningful progress for people, businesses and communities.",
   openGraph: {
     title: "BroadArks",
     description: "Building human possibility for a technology-shaped future.",
