@@ -220,7 +220,7 @@ export default function Header() {
                       href={item.href}
                       className="flex items-baseline gap-4 py-5 font-sans text-[1.75rem] tracking-tight text-ink sm:text-[2rem]"
                     >
-                      <span className="font-body text-[0.6875rem] tracking-[0.2em] text-sky">
+                      <span className="font-body text-[0.8125rem] tracking-[0.2em] text-sky">
                         0{i + 1}
                       </span>
                       {item.label}

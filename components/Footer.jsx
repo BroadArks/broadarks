@@ -20,7 +20,7 @@ export default function Footer() {
         <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-12 lg:gap-10">
           <div className="sm:col-span-2 lg:col-span-5">
             <Reveal>
-              <Logo />
+              <Logo size="lg" />
               <p className="mt-6 max-w-sm text-[0.95rem] leading-relaxed text-stone">
                 Building human possibility for a technology-shaped future. Four divisions,
                 one shared ambition — meaningful progress for people, businesses and communities.

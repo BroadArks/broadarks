@@ -45,7 +45,7 @@ export default function HeroHome() {
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-sky opacity-60" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-sky" />
             </span>
-            <span className="eyebrow text-[0.625rem] text-stone sm:text-[0.6875rem]">
+            <span className="eyebrow text-[0.75rem] text-stone sm:text-[0.8125rem]">
               {hero.eyebrow}
             </span>
           </motion.div>
@@ -99,13 +99,13 @@ export default function HeroHome() {
                 hidden: { opacity: 0, x: 18 },
                 show: { opacity: 1, x: 0, transition: { duration: 0.8, ease: EASE } },
               }}
-              className="group border-t border-line py-4"
+              className="group border-t border-line py-5"
             >
               <Link href={`/divisions/${d.slug}`} className="flex items-baseline justify-between gap-4">
-                <span className="font-sans text-[0.95rem] text-ink transition-transform duration-500 ease-[cubic-bezier(.16,1,.3,1)] group-hover:translate-x-1 sm:text-base">
+                <span className="font-sans text-[1.0625rem] text-ink transition-transform duration-500 ease-[cubic-bezier(.16,1,.3,1)] group-hover:translate-x-1 sm:text-[1.1875rem]">
                   {d.name}
                 </span>
-                <span className="shrink-0 text-[0.65rem] uppercase tracking-[0.14em] text-stone-soft">
+                <span className="shrink-0 text-[0.75rem] uppercase tracking-[0.14em] text-stone-soft">
                   {d.index}
                 </span>
               </Link>
@@ -120,9 +120,9 @@ export default function HeroHome() {
           className="font-sans text-sm uppercase tracking-[0.18em] text-ink"
           items={DIVISIONS.map((d) => (
             <span key={d.slug} className="flex items-baseline gap-3">
-              <span className="text-[0.65rem] text-sky">{d.index}</span>
+              <span className="text-[0.75rem] text-sky">{d.index}</span>
               {d.name}
-              <span className="font-body text-[0.65rem] normal-case tracking-[0.14em] text-stone-soft">
+              <span className="font-body text-[0.75rem] normal-case tracking-[0.14em] text-stone-soft">
                 {(ecosystem.divisions[d.slug]?.category ?? d.category).split("/")[1]}
               </span>
             </span>
