@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useInView, useScroll, useTransform, useSpring } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { Fragment, useEffect, useRef } from "react";
 
 const EASE = [0.16, 1, 0.3, 1];
 
@@ -228,3 +228,35 @@ export function CurtainMedia({ src, alt, className = "", ratio = "aspect-[4/5]" 
 }
 
 export { EASE };
+
+/* ---------- Two-tone headline built from copy data ----------
+   Lines are rendered exactly like the hand-written headlines they replace:
+   <br/>-separated, with the sky / serif-italic / muted accent spans. */
+const HEADLINE_TONE = {
+  sky: "text-sky",
+  serif: "font-serif font-normal italic",
+  soft: "text-stone-soft",
+};
+
+export function Headline({ lines = [], delay = 0, step = 0.12 }) {
+  let n = 0;
+  return (
+    <>
+      {lines.map((segments, li) => (
+        <Fragment key={li}>
+          {li > 0 ? <br /> : null}
+          {segments.map((seg, si) => {
+            const words = <Words text={seg.text} delay={delay + step * n++} />;
+            const tone = HEADLINE_TONE[seg.tone];
+            return (
+              <Fragment key={si}>
+                {si > 0 ? " " : null}
+                {tone ? <span className={tone}>{words}</span> : words}
+              </Fragment>
+            );
+          })}
+        </Fragment>
+      ))}
+    </>
+  );
+}

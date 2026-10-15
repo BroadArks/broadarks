@@ -43,7 +43,7 @@ export function AboutIntro() {
           <div className="lg:col-span-9">
             <HighlightParagraph
               className="display-3 font-sans font-medium text-ink"
-              text="We began with a simple discomfort: the future was arriving faster than most people were being prepared for it. BroadArks exists to close that distance — through enterprise, through technology, and through the patient work of human development."
+              text="We began with a simple discomfort: the future was arriving faster than most people were being prepared for it. BroadArks exists to close that distance through enterprise, through technology, and through the patient work of human development."
             />
           </div>
         </div>
@@ -54,9 +54,9 @@ export function AboutIntro() {
 
 export function Story() {
   const paras = [
-    "BroadArks was founded in March 2020 — a month that taught every founder in the world the difference between a plan and a conviction. Pankaj and Dr. Kaveri Dutta had both spent careers on opposite sides of the same problem: one building enterprises and capability, the other studying what actually changes a person's circumstances.",
-    "What they kept arriving at was the same conclusion from different directions. Technology, left to itself, concentrates advantage. Human development, without technology, struggles to scale. Neither works alone at the size of the problem India is facing — and neither should be asked to.",
-    "So BroadArks was built as a parent company rather than a single business: a structure deliberately wide enough to hold a skilling platform, a deep-tech venture, a responsible commerce house and a not-for-profit foundation, without any one of them distorting the others.",
+    "BroadArks was founded in March 2020, a month that taught every founder in the world the difference between a plan and a conviction. Pankaj and Dr. Kaveri Dutta had both spent careers on opposite sides of the same problem: one building enterprises and competencies, the other studying what actually changes a person's circumstances.",
+    "What they kept arriving at was the same conclusion from different directions. Technology, left to itself, concentrates advantage. Human development, without technology, struggles to scale. Neither works alone at the size of the problem India is facing, and neither should be asked to.",
+    "So BroadArks was built as a parent company rather than a single business: a structure deliberately wide enough to hold a training platform, a deep-tech venture, a responsible commerce house and a not-for-profit foundation, without any one of them distorting the others.",
     "Each division has its own market, its own timeline and its own definition of excellence. What they share is a test they must pass before anything ships: does this expand what a person can do?",
   ];
 
@@ -167,7 +167,7 @@ export function Timeline() {
               <Words text="Six years, four divisions." />
             </h2>
             <p className="mt-6 max-w-xs text-sm leading-relaxed text-white/55">
-              Built one conviction at a time — each division opened only when the problem was
+              Built one conviction at a time, with each division opened only when the problem was
               understood well enough to stay with it.
             </p>
           </div>

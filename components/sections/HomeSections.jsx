@@ -4,35 +4,33 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { SectionLabel } from "@/components/Section";
 import { ArrowLink } from "@/components/ArrowLink";
-import { CurtainMedia, HighlightParagraph, Parallax, Reveal, Rule, Words } from "@/components/Motion";
-import { FOUNDERS, PRINCIPLES } from "@/data/site";
+import { CurtainMedia, Headline, HighlightParagraph, Parallax, Reveal, Rule, Words } from "@/components/Motion";
+import { FOUNDERS } from "@/data/site";
+import { HOME_COPY } from "@/data/homeCopy";
 
 const EASE = [0.16, 1, 0.3, 1];
 
 /* ---------- Scroll-lit statement ---------- */
 export function Statement() {
+  const { belief } = HOME_COPY;
   return (
     <section className="bg-white py-24 lg:py-40">
       <div className="container-x grid gap-12 lg:grid-cols-12">
         <div className="lg:col-span-3">
           <div className="lg:sticky lg:top-32">
-            <SectionLabel>Our belief</SectionLabel>
-            <p className="mt-5 max-w-[24ch] text-sm leading-relaxed text-stone-soft">
-              Founded in March 2020 by Pankaj and Dr. Kaveri Dutta.
+            <SectionLabel>{belief.label}</SectionLabel>
+            <p className="mt-5 max-w-[26ch] text-sm leading-relaxed text-stone-soft">
+              {belief.note}
             </p>
           </div>
         </div>
         <div className="lg:col-span-9">
           <HighlightParagraph
             className="display-3 font-sans font-medium text-ink"
-            text="Progress becomes meaningful when technology expands human possibility. We bring enterprise, technology and human development under one roof — because the future will not be built by any of them alone."
+            text={belief.body}
           />
           <div className="mt-14 grid gap-10 sm:grid-cols-3">
-            {[
-              { k: "Enterprise", v: "Businesses built for the long arc, not the next quarter." },
-              { k: "Technology", v: "Capability engineered close to home, owned outright." },
-              { k: "Human development", v: "Skills, livelihoods and outcomes that actually change lives." },
-            ].map((item, i) => (
+            {belief.pillars.map((item, i) => (
               <Reveal key={item.k} delay={i * 0.08}>
                 <p className="eyebrow text-sky">{item.k}</p>
                 <p className="mt-3 text-sm leading-relaxed text-stone">{item.v}</p>
@@ -47,6 +45,7 @@ export function Statement() {
 
 /* ---------- Principles: sticky left, scrolling right ---------- */
 export function Principles() {
+  const { principles } = HOME_COPY;
   return (
     <section className="bg-white py-20 lg:py-32">
       <div className="container-x">
@@ -54,25 +53,22 @@ export function Principles() {
         <div className="grid gap-14 pt-14 lg:grid-cols-12 lg:gap-10">
           <div className="lg:col-span-5">
             <div className="lg:sticky lg:top-32">
-              <SectionLabel>How we work</SectionLabel>
-              <h2 className="display-2 mt-5 max-w-[12ch] font-sans">
-                <Words text="Four principles" />
-                <br />
-                <span className="text-stone-soft"><Words text="we refuse to trade." delay={0.1} /></span>
+              <SectionLabel>{principles.label}</SectionLabel>
+              <h2 className="display-2 mt-5 max-w-[15ch] font-sans">
+                <Headline lines={principles.headline} step={0.1} />
               </h2>
               <p className="mt-6 max-w-sm text-sm leading-relaxed text-stone">
-                They are not slogans. They are the filters every division applies before it
-                decides what to build, who to build it with and how long to stay.
+                {principles.text}
               </p>
               <div className="mt-8">
-                <ArrowLink href="/about">Read our story</ArrowLink>
+                <ArrowLink href={principles.link.href}>{principles.link.label}</ArrowLink>
               </div>
             </div>
           </div>
 
           <div className="lg:col-span-6 lg:col-start-7">
             <div className="space-y-px">
-              {PRINCIPLES.map((p, i) => (
+              {principles.items.map((p, i) => (
                 <motion.div
                   key={p.no}
                   initial={{ opacity: 0, y: 40 }}

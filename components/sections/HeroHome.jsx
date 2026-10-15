@@ -4,13 +4,15 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
 import { ButtonLink } from "@/components/ArrowLink";
-import { Words } from "@/components/Motion";
+import { Headline, Words } from "@/components/Motion";
 import Marquee from "@/components/Marquee";
 import { DIVISIONS } from "@/data/site";
+import { HOME_COPY } from "@/data/homeCopy";
 
 const EASE = [0.16, 1, 0.3, 1];
 
 export default function HeroHome() {
+  const { hero, purpose, ecosystem } = HOME_COPY;
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
   const y = useTransform(scrollYProgress, [0, 1], [0, 140]);
@@ -44,22 +46,12 @@ export default function HeroHome() {
               <span className="relative inline-flex h-2 w-2 rounded-full bg-sky" />
             </span>
             <span className="eyebrow text-[0.625rem] text-stone sm:text-[0.6875rem]">
-              One World · Four Divisions · Since 2020
+              {hero.eyebrow}
             </span>
           </motion.div>
 
           <h1 className="display-1 mt-7 font-sans font-medium text-ink lg:mt-10">
-            <Words text="Building human" />{" "}
-            <span className="text-sky">
-              <Words text="possibility" delay={0.18} />
-            </span>
-            <br />
-            <Words text="for a" delay={0.3} />{" "}
-            <span className="font-serif font-normal italic">
-              <Words text="technology-shaped" delay={0.42} />
-            </span>
-            <br />
-            <Words text="future." delay={0.55} />
+            <Headline lines={hero.headline} delay={0.06} />
           </h1>
 
           <motion.p
@@ -68,8 +60,7 @@ export default function HeroHome() {
             transition={{ duration: 1, delay: 0.7, ease: EASE }}
             className="lead mt-8 max-w-xl text-stone lg:mt-10"
           >
-            BroadArks brings enterprise, technology and human development under one shared
-            ambition: to create meaningful progress for people, businesses and communities.
+            {hero.lead}
           </motion.p>
 
           <motion.div
@@ -78,11 +69,9 @@ export default function HeroHome() {
             transition={{ duration: 1, delay: 0.82, ease: EASE }}
             className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4"
           >
-            <ButtonLink href="/divisions">
-              Explore the divisions
-            </ButtonLink>
-            <ButtonLink href="/about" variant="outline">
-              Our story
+            <ButtonLink href={hero.primary.href}>{hero.primary.label}</ButtonLink>
+            <ButtonLink href={hero.secondary.href} variant="outline">
+              {hero.secondary.label}
             </ButtonLink>
           </motion.div>
         </div>
@@ -101,7 +90,7 @@ export default function HeroHome() {
             }}
             className="pb-4"
           >
-            <span className="eyebrow text-stone-soft">The divisions</span>
+            <span className="eyebrow text-stone-soft">{hero.railLabel}</span>
           </motion.li>
           {DIVISIONS.map((d) => (
             <motion.li
@@ -134,7 +123,7 @@ export default function HeroHome() {
               <span className="text-[0.65rem] text-sky">{d.index}</span>
               {d.name}
               <span className="font-body text-[0.65rem] normal-case tracking-[0.14em] text-stone-soft">
-                {d.category.split("/")[1]}
+                {(ecosystem.divisions[d.slug]?.category ?? d.category).split("/")[1]}
               </span>
             </span>
           ))}
@@ -151,9 +140,9 @@ export default function HeroHome() {
           />
           <div className="absolute inset-0 flex items-end p-6 lg:p-14">
             <div className="max-w-md">
-              <p className="eyebrow text-white/60">The shared ambition</p>
+              <p className="eyebrow text-white/60">{purpose.eyebrow}</p>
               <p className="mt-3 font-sans text-xl leading-snug text-white lg:text-3xl">
-                Progress becomes meaningful when technology expands human possibility.
+                {purpose.statement}
               </p>
             </div>
           </div>
