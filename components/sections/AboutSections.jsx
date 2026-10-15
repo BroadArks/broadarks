@@ -1,7 +1,7 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { AnimatePresence, motion, useMotionValueEvent, useScroll, useTransform } from "framer-motion";
+import { useRef, useState } from "react";
 import { SectionLabel } from "@/components/Section";
 import { ArrowLink } from "@/components/ArrowLink";
 import {
@@ -67,6 +67,8 @@ const VISION_MISSION = [
 export function VisionMission() {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end end"] });
+  const [active, setActive] = useState(0);
+  useMotionValueEvent(scrollYProgress, "change", (v) => setActive(v < 0.5 ? 0 : 1));
 
   return (
     <div id="vision" className="scroll-mt-20">
@@ -85,10 +87,15 @@ export function VisionMission() {
                 ))}
               </div>
             </div>
-            <div className="relative min-h-[50vh] lg:col-span-7 lg:col-start-6">
-              {VISION_MISSION.map((item, i) => (
-                <VMStatement key={item.key} item={item} i={i} progress={scrollYProgress} />
-              ))}
+            <div className="relative flex min-h-[50vh] items-center lg:col-span-7 lg:col-start-6">
+              <AnimatePresence mode="wait" initial={false}>
+                <VMStatement
+                  key={active}
+                  item={VISION_MISSION[active]}
+                  i={active}
+                  progress={scrollYProgress}
+                />
+              </AnimatePresence>
             </div>
           </div>
         </div>
@@ -149,23 +156,23 @@ function VMTab({ item, i, progress }) {
 
 function VMStatement({ item, i, progress }) {
   const [a, b] = VM_RANGES[i];
-  const opacity = useTransform(
-    progress,
-    i === 0 ? [0, 0.46, 0.54] : [0.46, 0.54, 1],
-    i === 0 ? [1, 1, 0] : [0, 1, 1]
-  );
-  const y = useTransform(progress, i === 0 ? [0.46, 0.54] : [0.46, 0.54], i === 0 ? [0, -40] : [40, 0]);
   const words = item.text.split(" ");
   return (
-    <motion.div style={{ opacity, y }} className="absolute inset-0 flex flex-col justify-center">
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -40 }}
+      transition={{ duration: 0.55, ease: EASE }}
+      className="w-full"
+    >
       <p className="eyebrow text-sky">
         0{i + 1} · {item.key}
       </p>
-      <p className="mt-8 flex flex-wrap font-serif text-[clamp(2rem,3.6vw,3.5rem)] italic leading-[1.15] text-white">
+      <p className="mt-8 flex max-w-[24ch] flex-wrap font-serif text-[clamp(2rem,3.4vw,3.25rem)] italic leading-[1.2] text-white">
         {words.map((w, j) => {
-          const start = a + 0.04 + ((b - a - 0.12) * j) / words.length;
-          const end = start + (b - a - 0.12) / words.length;
-          return <VMWord key={`${w}-${j}`} word={w} progress={progress} range={[start, end]} />;
+          const span = b - a - 0.14;
+          const start = a + 0.04 + (span * j) / words.length;
+          return <VMWord key={`${w}-${j}`} word={w} progress={progress} range={[start, start + span / words.length]} />;
         })}
       </p>
     </motion.div>
@@ -173,10 +180,10 @@ function VMStatement({ item, i, progress }) {
 }
 
 function VMWord({ word, progress, range }) {
-  const opacity = useTransform(progress, range, [0.15, 1]);
+  const opacity = useTransform(progress, range, [0, 1]);
   return (
     <span className="relative mr-[0.28em] inline-block">
-      <span className="absolute inset-0 opacity-15">{word}</span>
+      <span className="absolute inset-0 opacity-20">{word}</span>
       <motion.span style={{ opacity }}>{word}</motion.span>
     </span>
   );
