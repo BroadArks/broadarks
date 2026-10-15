@@ -23,7 +23,7 @@ export default function Footer() {
               <Logo size="lg" />
               <p className="mt-6 max-w-sm text-[0.95rem] leading-relaxed text-stone">
                 Building human possibility for a technology-shaped future. Four divisions,
-                one shared ambition — meaningful progress for people, businesses and communities.
+                one shared ambition: meaningful progress for people, businesses and communities.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 {SOCIALS.map((s) => (

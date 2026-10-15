@@ -170,7 +170,7 @@ export function PostCard({ post }) {
 export function CTABand({
   eyebrow = "Work with us",
   title = "Let's build what comes next.",
-  text = "Whether you are a learner, an institution, an investor, a partner or simply curious — we would like to hear from you.",
+  text = "Whether you are a learner, an institution, an investor, a partner or simply curious, we would like to hear from you.",
   primary = { href: "/contact", label: "Start a conversation" },
   secondary = { href: "/divisions", label: "Explore divisions" },
 }) {

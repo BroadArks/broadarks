@@ -194,7 +194,7 @@ const DIRECTION_2 = {
       [{ text: "One shared vision.", tone: "soft" }],
     ],
     subtext:
-      "Every division solves a specific challenge in skill building, tech integration, or community growth. Each initiative is rooted in the same fundamental goal — turning structured execution into direct progress for real people.",
+      "Every division solves a specific challenge in skill building, tech integration, or community growth. Each initiative is rooted in the same fundamental goal: turning structured execution into direct progress for real people.",
     divisions: {
       "y-and-now": {
         category: "One World / Workforce Skilling",

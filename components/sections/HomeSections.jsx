@@ -123,7 +123,7 @@ export function FoundersStrip() {
           </blockquote>
           <Reveal delay={0.2}>
             <p className="mt-8 max-w-lg text-[0.95rem] leading-relaxed text-stone">
-              Pankaj and Dr. Kaveri Dutta founded BroadArks in March 2020 — an unlikely month to
+              Pankaj and Dr. Kaveri Dutta founded BroadArks in March 2020, an unlikely month to
               begin anything. That timing shaped the company: patient, pragmatic, and unwilling to
               confuse activity with progress.
             </p>

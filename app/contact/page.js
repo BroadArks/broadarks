@@ -18,7 +18,7 @@ export default function ContactPage() {
         eyebrow="Contact"
         title="Start a"
         accent="conversation."
-        lead="Learners, institutions, industry partners, investors, funders and the simply curious — every useful thing we have built began with somebody writing in."
+        lead="Learners, institutions, industry partners, investors, funders and the simply curious. Every useful thing we have built began with somebody writing in."
         meta={[
           { label: "General", value: "hello@broadarks.com" },
           { label: "Phone", value: "+91 11 4000 0000" },
