@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 import { SectionLabel } from "@/components/Section";
 import { ArrowLink } from "@/components/ArrowLink";
 import {
@@ -52,9 +53,138 @@ export function AboutIntro() {
   );
 }
 
+const VISION_MISSION = [
+  {
+    key: "Vision",
+    text: "A world where people can develop their potential, create useful solutions and build dignified livelihoods.",
+  },
+  {
+    key: "Mission",
+    text: "To advance relevant learning, applied engineering and social opportunity through specialist initiatives with a shared human purpose.",
+  },
+];
+
+export function VisionMission() {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end end"] });
+
+  return (
+    <div id="vision" className="scroll-mt-20">
+      {/* Desktop: pinned, scroll-driven */}
+      <section ref={ref} className="relative hidden h-[260vh] bg-ink lg:block">
+        <div className="sticky top-0 flex h-screen items-center overflow-hidden">
+          <div className="container-x grid w-full gap-14 lg:grid-cols-12">
+            <div className="lg:col-span-4">
+              <SectionLabel light>Vision &amp; mission</SectionLabel>
+              <h2 className="display-2 mt-5 max-w-[10ch] font-sans text-white">
+                <Words text="Where we are headed." />
+              </h2>
+              <div className="mt-12 space-y-5">
+                {VISION_MISSION.map((item, i) => (
+                  <VMTab key={item.key} item={item} i={i} progress={scrollYProgress} />
+                ))}
+              </div>
+            </div>
+            <div className="relative min-h-[50vh] lg:col-span-7 lg:col-start-6">
+              {VISION_MISSION.map((item, i) => (
+                <VMStatement key={item.key} item={item} i={i} progress={scrollYProgress} />
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Mobile: stacked */}
+      <section className="bg-ink py-20 lg:hidden">
+        <div className="container-x">
+          <SectionLabel light>Vision &amp; mission</SectionLabel>
+          <h2 className="display-2 mt-5 font-sans text-white">
+            <Words text="Where we are headed." />
+          </h2>
+          <div className="mt-12 space-y-14">
+            {VISION_MISSION.map((item, i) => (
+              <div key={item.key} className="border-t border-white/12 pt-8">
+                <p className="eyebrow text-sky">
+                  0{i + 1} · {item.key}
+                </p>
+                <HighlightParagraph
+                  className="display-3 mt-6 font-serif font-normal italic leading-[1.2] text-white"
+                  text={item.text}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+// Each statement owns half of the pinned scroll; they cross-fade at the midpoint.
+const VM_RANGES = [
+  [0, 0.5],
+  [0.5, 1],
+];
+
+function VMTab({ item, i, progress }) {
+  const [a, b] = VM_RANGES[i];
+  const fill = useTransform(progress, [a + 0.04, b - 0.08], [0, 1]);
+  const opacity = useTransform(
+    progress,
+    i === 0 ? [0, 0.46, 0.54] : [0.46, 0.54, 1],
+    i === 0 ? [1, 1, 0.35] : [0.35, 1, 1]
+  );
+  return (
+    <motion.div style={{ opacity }} className="border-t border-white/12 pt-5">
+      <div className="flex items-baseline gap-4">
+        <span className="font-sans text-xs text-sky">0{i + 1}</span>
+        <span className="font-sans text-xl text-white">{item.key}</span>
+      </div>
+      <div className="relative mt-4 h-px w-40 bg-white/15">
+        <motion.div style={{ scaleX: fill }} className="absolute inset-0 origin-left bg-sky" />
+      </div>
+    </motion.div>
+  );
+}
+
+function VMStatement({ item, i, progress }) {
+  const [a, b] = VM_RANGES[i];
+  const opacity = useTransform(
+    progress,
+    i === 0 ? [0, 0.46, 0.54] : [0.46, 0.54, 1],
+    i === 0 ? [1, 1, 0] : [0, 1, 1]
+  );
+  const y = useTransform(progress, i === 0 ? [0.46, 0.54] : [0.46, 0.54], i === 0 ? [0, -40] : [40, 0]);
+  const words = item.text.split(" ");
+  return (
+    <motion.div style={{ opacity, y }} className="absolute inset-0 flex flex-col justify-center">
+      <p className="eyebrow text-sky">
+        0{i + 1} · {item.key}
+      </p>
+      <p className="mt-8 flex flex-wrap font-serif text-[clamp(2rem,3.6vw,3.5rem)] italic leading-[1.15] text-white">
+        {words.map((w, j) => {
+          const start = a + 0.04 + ((b - a - 0.12) * j) / words.length;
+          const end = start + (b - a - 0.12) / words.length;
+          return <VMWord key={`${w}-${j}`} word={w} progress={progress} range={[start, end]} />;
+        })}
+      </p>
+    </motion.div>
+  );
+}
+
+function VMWord({ word, progress, range }) {
+  const opacity = useTransform(progress, range, [0.15, 1]);
+  return (
+    <span className="relative mr-[0.28em] inline-block">
+      <span className="absolute inset-0 opacity-15">{word}</span>
+      <motion.span style={{ opacity }}>{word}</motion.span>
+    </span>
+  );
+}
+
 export function Story() {
   const paras = [
-    "BroadArks was founded in March 2020, a month that taught every founder in the world the difference between a plan and a conviction. Pankaj and Dr. Kaveri Dutta had both spent careers on opposite sides of the same problem: one building enterprises and competencies, the other studying what actually changes a person's circumstances.",
+    "BroadArks was founded in March 2020, a month that taught every founder in the world the difference between a plan and a conviction. Mr. Pankaj Dutta and Dr. Kaveri Dutta had both spent careers on opposite sides of the same problem: one building enterprises and competencies, the other studying what actually changes a person's circumstances.",
     "What they kept arriving at was the same conclusion from different directions. Technology, left to itself, concentrates advantage. Human development, without technology, struggles to scale. Neither works alone at the size of the problem India is facing, and neither should be asked to.",
     "So BroadArks was built as a parent company rather than a single business: a structure deliberately wide enough to hold a training platform, a deep-tech venture, a responsible commerce house and a not-for-profit foundation, without any one of them distorting the others.",
     "Each division has its own market, its own timeline and its own definition of excellence. What they share is a test they must pass before anything ships: does this expand what a person can do?",

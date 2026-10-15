@@ -115,16 +115,16 @@ export const DIVISIONS = [
 
 export const FOUNDERS = [
   {
-    name: "Pankaj",
-    role: "Co-Founder & Chairman",
-    image: "/img/founder-pankaj.svg",
-    bio: "Pankaj has spent close to three decades building enterprises across technology, manufacturing and services, the kind of work that only looks like strategy in hindsight and feels like stubbornness at the time. At BroadArks he holds the long view: which core competencies India should own, which businesses deserve patience, and what progress should feel like for the people on the other side of it.",
+    name: "Mr. Pankaj Dutta",
+    role: "Co-Founder",
+    image: "/img/founder-pankaj-dutta.jpg",
+    bio: "Mr. Pankaj Dutta has spent close to three decades building enterprises across technology, manufacturing and services, the kind of work that only looks like strategy in hindsight and feels like stubbornness at the time. At BroadArks he holds the long view: which core competencies India should own, which businesses deserve patience, and what progress should feel like for the people on the other side of it.",
     focus: ["Enterprise Strategy", "Advanced Technology", "Capital & Governance"],
   },
   {
     name: "Dr. Kaveri Dutta",
-    role: "Co-Founder & Director",
-    image: "/img/founder-kaveri.svg",
+    role: "Co-Founder",
+    image: "/img/cofounder-kaveri-dutta.jpg",
     bio: "Dr. Kaveri Dutta works at the intersection of human development, learning systems and social outcomes. Her research-led approach shapes how BroadArks designs for people, from professional training pathways and artisan livelihoods to the measurement frameworks that tell us whether any of it actually worked.",
     focus: ["Human Development", "Learning Design", "Impact & Research"],
   },
@@ -161,7 +161,7 @@ export const PRINCIPLES = [
 ];
 
 export const TIMELINE = [
-  { year: "2020", title: "BroadArks is founded", text: "Pankaj and Dr. Kaveri Dutta establish BroadArks in March 2020, with a single conviction: enterprise, technology and human development belong in the same sentence." },
+  { year: "2020", title: "BroadArks is founded", text: "Mr. Pankaj Dutta and Dr. Kaveri Dutta establish BroadArks in March 2020, with a single conviction: enterprise, technology and human development belong in the same sentence." },
   { year: "2021", title: "Y&Now takes shape", text: "The future-focused learning platform begins connecting academia and industry with programmes built around emerging technology and practical know-how." },
   { year: "2022", title: "Karigreen opens the craft studio", text: "Artisan clusters meet contemporary design, digital platforms and responsible production." },
   { year: "2023", title: "BroadArks Foundation is constituted", text: "The not-for-profit entity extends the philosophy into access, systems, data and outcomes." },

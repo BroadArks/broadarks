@@ -36,6 +36,17 @@ export default function SmoothScroll({ children }) {
   useEffect(() => {
     window.__lenis?.scrollTo(0, { immediate: true });
     window.scrollTo(0, 0);
+
+    // Honour /page#section links once the new page has rendered.
+    const { hash } = window.location;
+    if (!hash) return;
+    const t = setTimeout(() => {
+      const el = document.querySelector(hash);
+      if (!el) return;
+      if (window.__lenis) window.__lenis.scrollTo(el, { offset: -80 });
+      else el.scrollIntoView({ behavior: "smooth" });
+    }, 350);
+    return () => clearTimeout(t);
   }, [pathname]);
 
   return <MotionConfig reducedMotion="user">{children}</MotionConfig>;
