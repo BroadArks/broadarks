@@ -102,7 +102,7 @@ function RailCard({ d, mobile = false }) {
     <Link
       href={`/divisions/${d.slug}`}
       className={`group relative flex shrink-0 flex-col justify-between overflow-hidden border border-line bg-white p-8 transition-colors duration-700 hover:border-ink/25 ${
-        mobile ? "w-full" : "h-[58vh] w-[30rem]"
+        mobile ? "w-full" : "h-[62vh] min-h-[26rem] w-[30rem]"
       }`}
     >
       <span className="absolute inset-x-0 bottom-0 h-0 bg-shell transition-[height] duration-700 ease-[cubic-bezier(.16,1,.3,1)] group-hover:h-full" />
@@ -112,8 +112,8 @@ function RailCard({ d, mobile = false }) {
         <span className="font-sans text-xs text-sky">{d.index}</span>
       </div>
 
-      <div className="relative mt-10">
-        <div className="mb-8 h-32 overflow-hidden bg-shell md:h-40">
+      <div className={`relative flex flex-col ${mobile ? "mt-10" : "mt-6 min-h-0 flex-1"}`}>
+        <div className={`mb-6 overflow-hidden bg-shell ${mobile ? "h-32 md:h-40" : "min-h-[4rem] flex-1 max-h-40"}`}>
           <img
             src={d.art}
             alt=""
@@ -125,7 +125,7 @@ function RailCard({ d, mobile = false }) {
         <p className="mt-4 max-w-sm text-sm leading-relaxed text-stone">{d.summary}</p>
       </div>
 
-      <div className="relative mt-8 flex items-center justify-between border-t border-line pt-5">
+      <div className="relative mt-6 flex shrink-0 items-center justify-between border-t border-line pt-5">
         <span className="mr-4 truncate text-[0.8125rem] uppercase tracking-[0.16em] text-stone-soft">{d.site}</span>
         <span className="flex shrink-0 items-center gap-2 text-sm text-ink">
           Explore
@@ -140,7 +140,7 @@ function ClosingCard({ copy, mobile = false }) {
   return (
     <div
       className={`flex shrink-0 flex-col justify-between gap-10 bg-ink p-8 text-white ${
-        mobile ? "w-full" : "h-[58vh] w-[26rem] gap-0"
+        mobile ? "w-full" : "h-[62vh] min-h-[26rem] w-[26rem] gap-0"
       }`}
     >
       <span className="eyebrow text-white/50">{copy.eyebrow}</span>
