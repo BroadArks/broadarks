@@ -8,7 +8,7 @@ export const DIVISIONS = [
     kicker: "Bridging Academia and Industry to turn knowing into doing.",
     disciplines: ["Future Skills", "Emerging Technology", "Industry Readiness", "Careers"],
     summary:
-      "A future-skills platform bridging the gap between academia and industry — turning knowing into doing.",
+      "A future-skills platform bridging the gap between academia and industry, turning knowing into doing.",
     body: [
       "The nature of work evolves faster than conventional education systems can typically address.",
       "Y&Now is our specialized learning platform focused on connecting academic depth with industry expectations. We design educational experiences around emerging technologies, professional requirements, and practical applications, helping learners transition from passive knowledge to active creation and adaptation.",
@@ -174,19 +174,19 @@ export const POSTS = [
     slug: "the-skills-gap-is-a-speed-problem",
     title: "The skills gap is not a knowledge problem. It is a speed problem.",
     excerpt:
-      "Curricula are designed to be stable. Industry is designed to move. The distance between the two is where careers quietly stall — and where Y&Now decided to build.",
+      "Curricula are designed to be stable. Industry is designed to move. The distance between the two is where careers quietly stall, and where Y&Now decided to build.",
     category: "Future Skills",
     date: "12 August 2026",
     readTime: "6 min read",
     author: "Y&Now Editorial",
     image: "/img/blog-01.svg",
     body: [
-      { type: "p", text: "Every conversation about employability eventually arrives at the same word: gap. It is a comfortable word. It suggests distance, and distance suggests that with enough effort — a few more courses, a few more certifications — the two sides will meet somewhere in the middle." },
+      { type: "p", text: "Every conversation about employability eventually arrives at the same word: gap. It is a comfortable word. It suggests distance, and distance suggests that with enough effort (a few more courses, a few more certifications) the two sides will meet somewhere in the middle." },
       { type: "p", text: "The problem is that a gap implies two things standing still. Neither is. A curriculum is a promise made years in advance, reviewed on a cycle measured in academic sessions. An industry requirement is a promise made this quarter, revised the moment a new tool ships. One of these systems is designed for stability. The other is designed for velocity. What we call a gap is really the interference pattern between two very different clocks." },
       { type: "h", text: "What changes when you treat it as speed" },
       { type: "p", text: "Once the question becomes speed rather than content, the design decisions change entirely. You stop asking what someone should know and start asking how quickly they can move from unfamiliar to useful. Content becomes modular because modules can be replaced. Assessment becomes project-shaped because projects reveal adaptability in a way that recall never will. And the learner's relationship with the material changes from memorisation to navigation." },
       { type: "quote", text: "Behind every certification is something far more important: the confidence to take a first step.", cite: "Y&Now" },
-      { type: "p", text: "This is why the learners we find most instructive are rarely the ones with the highest scores. They are the ones who have already been through one obsolescence cycle — a role that disappeared, a tool that was replaced, a sector that contracted — and came out the other side having learned the meta-skill. They know how to begin again. That capability outlasts any specific technology." },
+      { type: "p", text: "This is why the learners we find most instructive are rarely the ones with the highest scores. They are the ones who have already been through one obsolescence cycle (a role that disappeared, a tool that was replaced, a sector that contracted) and came out the other side having learned the meta-skill. They know how to begin again. That capability outlasts any specific technology." },
       { type: "h", text: "Designing for the next cycle, not this one" },
       { type: "p", text: "A programme built for today's job description ages the moment it is written. A programme built for the next transition assumes it will be needed again. So we build for repeat use: the same learner returning in three years, in an entirely different context, expecting the process to still work." },
       { type: "p", text: "That is a harder thing to build and a slower thing to prove. It is also, we think, the only version worth building. Preparing people for the jobs of today is a service. Preparing them for the possibilities of tomorrow is an education." },
@@ -209,7 +209,7 @@ export const POSTS = [
       { type: "p", text: "It is tempting to treat autonomous systems as an AI problem. In practice, perception is the part that demos well and the part that fails last. The hard problems live in the seams: power budgets, thermal behaviour, comms degradation, the failure mode you only find at hour nine of a duty cycle. Autonomy is what a full system does under stress, not what a model outputs in a notebook." },
       { type: "quote", text: "The technologies that define the future should not only be consumed in India. They should increasingly be imagined, engineered and built here.", cite: "Vihanga.ai" },
       { type: "h", text: "What self-reliance actually costs" },
-      { type: "p", text: "Indigenous capability is expensive in the currency that matters least to markets and most to institutions: time. It requires funding a learning curve that a purchase order would let you skip. It requires accepting that your first iteration will be outperformed by something you could have simply imported — and building the second one anyway." },
+      { type: "p", text: "Indigenous capability is expensive in the currency that matters least to markets and most to institutions: time. It requires funding a learning curve that a purchase order would let you skip. It requires accepting that your first iteration will be outperformed by something you could have simply imported, and building the second one anyway." },
       { type: "p", text: "The return arrives later, and it is not a product. It is a set of people who know how, a supply base that can respond, and a decision you no longer have to ask anyone else's permission to make. That is the asset. Everything else is a deliverable." },
     ],
   },
@@ -217,7 +217,7 @@ export const POSTS = [
     slug: "what-the-hands-already-know",
     title: "What the hands already know: craft, technology and a larger world",
     excerpt:
-      "Technology is usually introduced to craft as a correction. Karigreen approaches it as an introduction instead — to design, to demand, and to markets that were always out of reach.",
+      "Technology is usually introduced to craft as a correction. Karigreen approaches it as an introduction instead: to design, to demand, and to markets that were always out of reach.",
     category: "Responsible Commerce",
     date: "09 April 2026",
     readTime: "5 min read",
@@ -225,7 +225,7 @@ export const POSTS = [
     image: "/img/blog-03.svg",
     body: [
       { type: "p", text: "Walk into an artisan cluster with a technology brief and you will notice something uncomfortable within the first hour: the technology has very little to teach the craft. The knowledge in those hands has been refined across generations, tested against materials and seasons and failure in ways no product team has ever been stress-tested." },
-      { type: "p", text: "What is genuinely missing is almost never skill. It is proximity — to design conversations happening elsewhere, to demand signals arriving too late, to markets that never learned this work existed. The gap is distributional, not technical." },
+      { type: "p", text: "What is genuinely missing is almost never skill. It is proximity: to design conversations happening elsewhere, to demand signals arriving too late, to markets that never learned this work existed. The gap is distributional, not technical." },
       { type: "h", text: "Technology as introduction, not correction" },
       { type: "p", text: "So we try to use technology for the thing it is actually good at: closing distance. Digital platforms that put a maker in front of a global buyer. Demand planning that tells a cluster what to make before the season, not after it. Design tooling that lets a contemporary silhouette meet a traditional technique without either one apologising." },
       { type: "quote", text: "The future of craftsmanship should not require leaving tradition behind. It should give tradition a larger world to belong to.", cite: "Karigreen" },

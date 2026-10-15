@@ -19,11 +19,11 @@ const instrument = Instrument_Serif({
 export const metadata = {
   metadataBase: new URL("https://broadarks.com"),
   title: {
-    default: "BroadArks — Building human possibility for a technology-shaped future",
+    default: "BroadArks | Building human possibility for a technology-shaped future",
     template: "%s · BroadArks",
   },
   description:
-    "Founded in 2020 by Pankaj and Dr. Kaveri Dutta, BroadArks brings enterprise, technology and human development under one shared ambition — meaningful progress for people, businesses and communities.",
+    "Founded in 2020 by Pankaj and Dr. Kaveri Dutta, BroadArks brings enterprise, technology and human development under one shared ambition: meaningful progress for people, businesses and communities.",
   openGraph: {
     title: "BroadArks",
     description: "Building human possibility for a technology-shaped future.",

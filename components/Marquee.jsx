@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 
-export default function Marquee({ items, speed = 28, reverse = false, className = "", separator = "—" }) {
+export default function Marquee({ items, speed = 28, reverse = false, className = "", separator = "·" }) {
   const track = [...items, ...items];
 
   return (

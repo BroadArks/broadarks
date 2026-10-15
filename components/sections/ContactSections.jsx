@@ -112,7 +112,7 @@ export function ContactForm() {
             </h2>
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-stone">
               One form, four divisions. Tell us roughly where you fit and the message will find the
-              right desk — usually within two working days.
+              right desk, usually within two working days.
             </p>
             <div className="mt-8 space-y-2 text-sm">
               <a href="mailto:hello@broadarks.com" className="block text-ink transition-colors hover:text-sky">
@@ -222,7 +222,7 @@ export function ContactForm() {
                     </span>
                   </button>
                   <p className="text-xs text-stone-soft">
-                    This is a demonstration form — no data leaves your browser.
+                    This is a demonstration form. No data leaves your browser.
                   </p>
                 </div>
               </motion.form>
@@ -289,7 +289,7 @@ export function FAQ() {
     },
     {
       q: "Do you work with academic institutions?",
-      a: "Yes — bridging academia and industry is the founding premise of Y&Now. We work with universities, colleges and training institutions on curriculum, delivery and placement pathways.",
+      a: "Yes, bridging academia and industry is the founding premise of Y&Now. We work with universities, colleges and training institutions on curriculum, delivery and placement pathways.",
     },
     {
       q: "Can we support the Foundation's work?",
@@ -408,7 +408,7 @@ export function VisitUs() {
                 </a>
               </div>
               <p className="mt-8 max-w-xs text-sm leading-relaxed text-stone">
-                Visits are by appointment — write ahead and we will make sure the right people
+                Visits are by appointment. Write ahead and we will make sure the right people
                 are in the room.
               </p>
             </Reveal>

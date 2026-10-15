@@ -4,7 +4,7 @@ import { FeaturedPost } from "@/components/sections/BlogSections";
 
 export const metadata = {
   title: "Journal",
-  description: "Thinking from inside the work — notes from across the BroadArks divisions.",
+  description: "Thinking from inside the work: notes from across the BroadArks divisions.",
 };
 
 export default function BlogPage() {
@@ -39,7 +39,7 @@ export default function BlogPage() {
       <CTABand
         eyebrow="Say hello"
         title="Have something you would like us to write about?"
-        text="We read everything that arrives — and occasionally it turns into the next piece."
+        text="We read everything that arrives, and occasionally it turns into the next piece."
         primary={{ href: "/contact", label: "Write to us" }}
         secondary={{ href: "/divisions", label: "Explore divisions" }}
       />
