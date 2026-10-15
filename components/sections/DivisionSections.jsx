@@ -39,7 +39,7 @@ export function DivisionBlock({ d, i }) {
               <p className="mt-8 text-[1.0625rem] leading-relaxed text-stone">{d.body[1]}</p>
               <div className="mt-8 flex flex-wrap gap-2">
                 {d.disciplines.map((t) => (
-                  <span key={t} className="rounded-full border border-line px-3.5 py-1.5 text-[0.7rem] uppercase tracking-[0.12em] text-stone">
+                  <span key={t} className="rounded-full border border-line px-3.5 py-1.5 text-[0.8125rem] uppercase tracking-[0.12em] text-stone">
                     {t}
                   </span>
                 ))}

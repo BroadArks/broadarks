@@ -154,7 +154,7 @@ export function PostCard({ post }) {
           loading="lazy"
         />
       </div>
-      <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[0.7rem] uppercase tracking-[0.16em] text-stone-soft">
+      <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[0.8125rem] uppercase tracking-[0.16em] text-stone-soft">
         <span className="text-sky">{post.category}</span>
         <span aria-hidden>·</span>
         <span>{post.readTime}</span>

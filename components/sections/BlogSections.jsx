@@ -25,7 +25,7 @@ export function FeaturedPost({ post }) {
             </div>
           </div>
           <div className="lg:col-span-5">
-            <div className="flex items-center gap-3 text-[0.7rem] uppercase tracking-[0.16em] text-stone-soft">
+            <div className="flex items-center gap-3 text-[0.8125rem] uppercase tracking-[0.16em] text-stone-soft">
               <span className="text-sky">{post.category}</span>
               <span>·</span>
               <span>{post.readTime}</span>
@@ -59,7 +59,7 @@ export function ArticleHero({ post }) {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: EASE }}
-          className="flex items-center gap-3 text-[0.7rem] uppercase tracking-[0.16em]"
+          className="flex items-center gap-3 text-[0.8125rem] uppercase tracking-[0.16em]"
         >
           <Link href="/blog" className="text-stone-soft transition-colors hover:text-ink">
             Journal
@@ -163,7 +163,7 @@ export function NextPost({ post }) {
             </Parallax>
           </div>
           <div className="lg:col-span-7 lg:col-start-6">
-            <span className="text-[0.7rem] uppercase tracking-[0.16em] text-sky">{post.category}</span>
+            <span className="text-[0.8125rem] uppercase tracking-[0.16em] text-sky">{post.category}</span>
             <h3 className="mt-4 font-sans text-[clamp(1.5rem,2.6vw,2.25rem)] leading-tight text-ink">
               {post.title}
             </h3>

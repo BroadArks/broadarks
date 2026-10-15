@@ -126,7 +126,7 @@ function RailCard({ d, mobile = false }) {
       </div>
 
       <div className="relative mt-8 flex items-center justify-between border-t border-line pt-5">
-        <span className="mr-4 truncate text-[0.7rem] uppercase tracking-[0.16em] text-stone-soft">{d.site}</span>
+        <span className="mr-4 truncate text-[0.8125rem] uppercase tracking-[0.16em] text-stone-soft">{d.site}</span>
         <span className="flex shrink-0 items-center gap-2 text-sm text-ink">
           Explore
           <span className="inline-block transition-transform duration-500 ease-[cubic-bezier(.16,1,.3,1)] group-hover:translate-x-1.5">→</span>
