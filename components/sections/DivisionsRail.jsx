@@ -4,11 +4,15 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { DIVISIONS } from "@/data/site";
+import { HOME_COPY } from "@/data/homeCopy";
 import { SectionLabel } from "@/components/Section";
-import { Reveal, Words } from "@/components/Motion";
+import { Headline, Reveal } from "@/components/Motion";
 import { ArrowLink } from "@/components/ArrowLink";
 
 export default function DivisionsRail() {
+  const { ecosystem } = HOME_COPY;
+  // Homepage card copy overrides the canonical division copy used elsewhere.
+  const cards = DIVISIONS.map((d) => ({ ...d, ...(ecosystem.divisions[d.slug] ?? {}) }));
   const sectionRef = useRef(null);
   const trackRef = useRef(null);
   const [distance, setDistance] = useState(0);
@@ -42,16 +46,13 @@ export default function DivisionsRail() {
         <div className="sticky top-0 flex h-screen flex-col justify-center overflow-hidden">
           <div className="container-x flex items-end justify-between pb-10">
             <div>
-              <SectionLabel>What we build</SectionLabel>
-              <h2 className="display-2 mt-5 max-w-[16ch] font-sans">
-                <Words text="Four divisions." />
-                <br />
-                <span className="text-stone-soft"><Words text="One ambition." delay={0.1} /></span>
+              <SectionLabel>{ecosystem.label}</SectionLabel>
+              <h2 className="display-2 mt-5 max-w-[22ch] font-sans">
+                <Headline lines={ecosystem.headline} step={0.1} />
               </h2>
             </div>
-            <div className="hidden max-w-xs pb-2 text-sm leading-relaxed text-stone xl:block">
-              Each division answers a different question about the future — and each answer is
-              built around the same idea: that progress should be felt by people.
+            <div className="hidden max-w-sm pb-2 text-sm leading-relaxed text-stone xl:block">
+              {ecosystem.subtext}
               <div className="mt-6 flex items-center gap-4">
                 <div className="relative h-px w-40 bg-line">
                   <motion.div style={{ scaleX: progress }} className="absolute inset-0 origin-left bg-ink" />
@@ -61,10 +62,10 @@ export default function DivisionsRail() {
           </div>
 
           <motion.div ref={trackRef} style={{ x }} className="flex gap-8 pl-[3.5rem] pr-[3.5rem]">
-            {DIVISIONS.map((d) => (
+            {cards.map((d) => (
               <RailCard key={d.slug} d={d} />
             ))}
-            <ClosingCard />
+            <ClosingCard copy={ecosystem.closing} />
           </motion.div>
         </div>
       </section>
@@ -72,19 +73,24 @@ export default function DivisionsRail() {
       {/* Mobile: stacked */}
       <section className="bg-shell py-20 lg:hidden">
         <div className="container-x">
-          <SectionLabel>What we build</SectionLabel>
+          <SectionLabel>{ecosystem.label}</SectionLabel>
           <h2 className="display-2 mt-5 font-sans">
-            Four divisions.
-            <br />
-            <span className="text-stone-soft">One ambition.</span>
+            {ecosystem.headline.map((segments, i) => (
+              <span key={i} className={`block ${i > 0 ? "text-stone-soft" : ""}`}>
+                {segments.map((seg) => seg.text).join(" ")}
+              </span>
+            ))}
           </h2>
           <div className="mt-10 space-y-6">
-            {DIVISIONS.map((d) => (
+            {cards.map((d) => (
               <Reveal key={d.slug}>
                 <RailCard d={d} mobile />
               </Reveal>
             ))}
           </div>
+          <Reveal className="mt-6">
+            <ClosingCard copy={ecosystem.closing} mobile />
+          </Reveal>
         </div>
       </section>
     </>
@@ -130,20 +136,20 @@ function RailCard({ d, mobile = false }) {
   );
 }
 
-function ClosingCard() {
+function ClosingCard({ copy, mobile = false }) {
   return (
-    <div className="flex h-[58vh] w-[26rem] shrink-0 flex-col justify-between bg-ink p-8 text-white">
-      <span className="eyebrow text-white/50">One World</span>
+    <div
+      className={`flex shrink-0 flex-col justify-between gap-10 bg-ink p-8 text-white ${
+        mobile ? "w-full" : "h-[58vh] w-[26rem] gap-0"
+      }`}
+    >
+      <span className="eyebrow text-white/50">{copy.eyebrow}</span>
       <div>
-        <p className="font-sans text-3xl leading-tight">
-          Different problems. Different timelines. The same measure of success.
-        </p>
-        <p className="mt-5 text-sm leading-relaxed text-white/60">
-          What changes for a person, a business or a community because we were here?
-        </p>
+        <p className="font-sans text-3xl leading-tight">{copy.statement}</p>
+        <p className="mt-5 text-sm leading-relaxed text-white/60">{copy.text}</p>
       </div>
-      <ArrowLink href="/divisions" light>
-        See all divisions
+      <ArrowLink href={copy.cta.href} light>
+        {copy.cta.label}
       </ArrowLink>
     </div>
   );

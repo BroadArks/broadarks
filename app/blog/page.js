@@ -14,9 +14,9 @@ export default function BlogPage() {
     <>
       <PageHero
         eyebrow="The Journal"
-        title="Notes from inside"
-        accent="the work."
-        lead="Occasional writing from across the divisions — on skills, technology, craft and the unglamorous parts of building things that last."
+        title="Perspective from"
+        accent="the ground up."
+        lead="Occasional writing from across our divisions, exploring practical capabilities, modern technology, traditional craft, and the quiet, demanding work of building things that last."
         meta={[
           { label: "Published", value: `${POSTS.length} pieces` },
           { label: "Topics", value: "Skills · Tech · Craft" },

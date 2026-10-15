@@ -37,9 +37,9 @@ export default function AboutPage() {
       <CTABand
         eyebrow="Join us"
         title="If this sounds like your kind of work."
-        text="We are always interested in people, institutions and partners who think in decades rather than quarters."
-        primary={{ href: "/contact", label: "Get in touch" }}
-        secondary={{ href: "/blog", label: "Read the journal" }}
+        text="We are always interested in collaborating with people, institutions, and partners who measure time in decades rather than quarters."
+        primary={{ href: "/contact", label: "Start a conversation" }}
+        secondary={{ href: "/blog", label: "Explore our journal" }}
       />
     </>
   );
