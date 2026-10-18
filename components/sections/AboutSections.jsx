@@ -191,7 +191,7 @@ function VMWord({ word, progress, range }) {
 
 export function Story() {
   const paras = [
-    "BroadArks was founded in March 2020, a month that taught every founder in the world the difference between a plan and a conviction. Mr. Pankaj Dutta and Dr. Kaveri Dutta had both spent careers on opposite sides of the same problem: one building enterprises and competencies, the other studying what actually changes a person's circumstances.",
+    "BroadArks was founded in March 2020, a month that taught every founder in the world the difference between a plan and a conviction. Mr. Pankaj Dutta and Dr. Kaveri Dutta had both spent careers on opposite sides of the same challenge: one building enterprises and competencies, the other studying what actually changes a person's circumstances.",
     "What they kept arriving at was the same conclusion from different directions. Technology, left to itself, concentrates advantage. Human development, without technology, struggles to scale. Neither works alone at the size of the problem India is facing, and neither should be asked to.",
     "So BroadArks was built as a parent company rather than a single business: a structure deliberately wide enough to hold a training platform, a deep-tech venture, a responsible commerce house and a not-for-profit foundation, without any one of them distorting the others.",
     "Each division has its own market, its own timeline and its own definition of excellence. What they share is a test they must pass before anything ships: does this expand what a person can do?",

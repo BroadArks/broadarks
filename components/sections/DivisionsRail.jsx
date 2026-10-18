@@ -81,6 +81,7 @@ export default function DivisionsRail() {
               </span>
             ))}
           </h2>
+          <p className="mt-6 max-w-xl text-sm leading-relaxed text-stone">{ecosystem.subtext}</p>
           <div className="mt-10 space-y-6">
             {cards.map((d) => (
               <Reveal key={d.slug}>

@@ -114,7 +114,7 @@ export function JournalTeaser({ limit = 3 }) {
       <div className="container-x">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div>
-            <SectionLabel>The Journal</SectionLabel>
+            <SectionLabel>The BroadArks Journal</SectionLabel>
             <h2 className="display-2 mt-5 max-w-[14ch] font-sans">
               <Words text="Thinking, from" />
               <br />

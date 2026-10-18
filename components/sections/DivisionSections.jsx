@@ -98,7 +98,11 @@ export function DivisionHero({ d }) {
           transition={{ duration: 0.9, delay: 0.5, ease: EASE }}
           className="mt-10 flex flex-col items-start gap-5 border-t border-white/15 pt-8 sm:flex-row sm:items-center sm:gap-x-10 lg:mt-12"
         >
-          <span className="eyebrow text-white/60">{d.kicker}</span>
+          {d.kicker.length > 90 ? (
+            <p className="max-w-2xl text-sm leading-relaxed text-white/70">{d.kicker}</p>
+          ) : (
+            <span className="eyebrow text-white/60">{d.kicker}</span>
+          )}
           <span className="sm:ml-auto">
             <ArrowLink href={d.href} external light>
               Visit {d.site}
@@ -118,7 +122,9 @@ export function DivisionBody({ d }) {
         <div className="lg:col-span-4">
           <div className="lg:sticky lg:top-32">
             <SectionLabel>{d.category}</SectionLabel>
-            <p className="mt-6 max-w-xs text-sm leading-relaxed text-stone-soft">{d.summary}</p>
+            <h2 className="display-3 mt-5 max-w-[16ch] font-sans text-ink">
+              <Words text={d.overviewTitle} />
+            </h2>
             <div className="mt-8">
               <ArrowLink href={d.href} external>
                 {d.site}
@@ -138,7 +144,17 @@ export function DivisionBody({ d }) {
             ))}
           </div>
 
-          <div className="mt-16 space-y-px">
+          <div className="mt-20">
+            <SectionLabel>How we operate</SectionLabel>
+            <h3 className="mt-5 font-sans text-[clamp(1.75rem,2.6vw,2.25rem)] leading-tight tracking-tight text-ink">
+              <Words text={d.approachTitle} />
+            </h3>
+            <Reveal delay={0.1}>
+              <p className="mt-4 max-w-lg text-[1.0625rem] leading-relaxed text-stone">{d.approachText}</p>
+            </Reveal>
+          </div>
+
+          <div className="mt-10 space-y-px">
             {d.pillars.map((p, i) => (
               <motion.div
                 key={p.title}
@@ -176,10 +192,11 @@ export function DivisionClosing({ d }) {
             <SectionLabel>In short</SectionLabel>
           </div>
           <div className="lg:col-span-9 lg:col-start-4">
-            <p className="display-3 font-serif font-normal italic leading-[1.15] text-ink">
-              <Words text={d.closing} stagger={0.03} />
-            </p>
+            <h2 className="display-3 font-serif font-normal italic leading-[1.15] text-ink">
+              <Words text={d.closingTitle} stagger={0.03} />
+            </h2>
             <Reveal delay={0.2}>
+              <p className="lead mt-8 max-w-2xl leading-relaxed text-stone">{d.closing}</p>
               <div className="mt-12">
                 <ButtonLink href={d.href} external>
                   Visit {d.site}
