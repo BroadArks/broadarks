@@ -4,7 +4,8 @@ import { FeaturedPost } from "@/components/sections/BlogSections";
 
 export const metadata = {
   title: "Journal",
-  description: "Thinking from inside the work: notes from across the BroadArks divisions.",
+  description:
+    "Periodically curated perspectives from across the BroadArks divisions on advanced competencies, technology, artisanal mastery and long-term value creation.",
 };
 
 export default function BlogPage() {
@@ -14,9 +15,9 @@ export default function BlogPage() {
     <>
       <PageHero
         eyebrow="The Journal"
-        title="Perspective from"
-        accent="the ground up."
-        lead="Occasional writing from across our divisions, exploring practical capabilities, modern technology, traditional craft, and the quiet, demanding work of building things that last."
+        title="Foundational Insights"
+        accent="on Strategic Endeavors"
+        lead="Periodically curated perspectives from our respective divisions, analyzing advanced competencies, pioneering technological applications, artisanal mastery, and the diligent execution required for long-term value creation."
         meta={[
           { label: "Published", value: `${POSTS.length} pieces` },
           { label: "Topics", value: "Skills · Tech · Craft" },

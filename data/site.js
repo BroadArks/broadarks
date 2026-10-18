@@ -8,12 +8,16 @@ export const DIVISIONS = [
     kicker: "Bridging Academia and Industry to turn knowing into doing.",
     disciplines: ["Future Skills", "Emerging Technology", "Industry Readiness", "Careers"],
     summary:
-      "A future-skills platform bridging the gap between academia and industry, turning knowing into doing.",
+      "Connecting education directly with employment through hands-on technical skills and workplace readiness programs.",
     body: [
       "The nature of work evolves faster than conventional education systems can typically address.",
       "Y&Now is our specialized learning platform focused on connecting academic depth with industry expectations. We design educational experiences around emerging technologies, professional requirements, and practical applications, helping learners transition from passive knowledge to active creation and adaptation.",
       "Behind every certification or new competency lies something far more fundamental: the confidence to take a first step, enter a new profession, remain relevant, build a lasting career, or begin again.",
     ],
+    overviewTitle: "Preparing people for the possibilities of tomorrow.",
+    approachTitle: "Three steps from theory to practice.",
+    approachText: "Our structured learning path moves learners from foundational understanding to real-world impact.",
+    closingTitle: "Moving beyond knowing into doing.",
     closing:
       "Y&Now is about preparing people not simply for the jobs of today, but for the possibilities of tomorrow.",
     pillars: [
@@ -36,12 +40,16 @@ export const DIVISIONS = [
     kicker: "AI, Robotics, Autonomous Systems, UAVs, and Advanced Engineering.",
     disciplines: ["Artificial Intelligence", "Robotics", "Autonomous Systems", "UAVs"],
     summary:
-      "An advanced technology venture building at the intersection of AI, robotics, autonomy and engineering.",
+      "Designing practical solutions at the intersection of AI, automated systems, robotics, and industrial engineering.",
     body: [
       "Some of tomorrow's most important competencies will emerge at the intersection of artificial intelligence, robotics, autonomous systems, UAVs, and advanced engineering.",
       "Vihanga.ai is our advanced technology venture focused on exploring and developing expertise across these frontiers, including applications relevant to strategic and defence technologies.",
       "Our ambition is to contribute to an ecosystem of indigenous innovation, engineering excellence, and technological self-reliance.",
     ],
+    overviewTitle: "Building advanced technology for a self-reliant future.",
+    approachTitle: "Three pillars of engineering excellence.",
+    approachText: "Our technical development focuses on resilient systems built for real-world duty cycles and strategic independence.",
+    closingTitle: "Imagined, engineered, and built at home.",
     closing:
       "Because the technologies that define the future should not only be consumed in India. They should increasingly be imagined, engineered, and built here.",
     pillars: [
@@ -60,16 +68,21 @@ export const DIVISIONS = [
     email: "karigreen@broadarks.com",
     name: "Karigreen",
     category: "One World / Responsible Commerce",
-    tagline: "Tradition meets contemporary design.",
-    kicker: "Bringing heritage craftsmanship into conversation with sustainable markets, thoughtful design, and modern digital tools.",
+    tagline: "Designing for Conscious Living and Cultural Permanence.",
+    kicker:
+      "An initiative under BroadArks Foundation, Karigreen operates at the intersection of artisanal mastery, circular design, and economic empowerment. By integrating traditional techniques with modern market demands, we advance sustainable product development while creating enduring livelihoods for women, youth, and regional artisan communities.",
     disciplines: ["Craft", "Design", "Sustainability", "Global Markets"],
     summary:
-      "Heritage craftsmanship in conversation with contemporary design, technology and global markets.",
+      "Bringing traditional artisan skills into modern enterprise by combining sustainable design with commercial reach.",
     body: [
       "Generations of artisans carry extraordinary knowledge in their hands.",
       "Karigreen exists to connect that heritage craft with contemporary design, digital platforms, and global markets.",
       "Across home, lifestyle, and fashion, we use technology to refine demand planning, empower local maker clusters, and move our production choices closer to a zero-waste reality.",
     ],
+    overviewTitle: "Placing makers at the heart of modern commerce.",
+    approachTitle: "Three pillars of responsible enterprise.",
+    approachText: "We bridge traditional artistry with modern market standards through a model built on respect, efficiency, and environmental care.",
+    closingTitle: "A larger world for timeless craft.",
     closing:
       "Preserving heritage should never mean leaving tradition behind. Our mission is to give time-honored artistry a thriving commercial future.",
     pillars: [
@@ -88,16 +101,20 @@ export const DIVISIONS = [
     email: "foundation@broadarks.com",
     name: "BroadArks Foundation",
     category: "One World / Social Development",
-    tagline: "Technology for Human Progress.",
+    tagline: "Building Inclusive Systems for Lasting Social Transformation.",
     kicker: "Access, Systems, Data, and Outcomes.",
     disciplines: ["Access", "Systems", "Data", "Outcomes"],
     summary:
-      "Our not-for-profit entity, extending the BroadArks philosophy into social development.",
+      "Driving grassroots initiatives that empower local populations with sustainable livelihoods and financial independence.",
     body: [
       "Opportunity should never be determined by geography, birth, or circumstance.",
       "BroadArks Foundation serves as our independent non-profit arm, carrying our core philosophy directly into social development. We focus where better abilities, stronger civic systems, and thoughtful technology can permanently improve everyday lives and local communities.",
       "Our work looks beyond simple distribution, exploring how data spots gaps early, digital tools widen access, and rigorous tracking proves real change.",
     ],
+    overviewTitle: "Extending our philosophy into grassroots progress.",
+    approachTitle: "Three pillars of lasting social impact.",
+    approachText: "We build programs designed around deep equity, transparency, and verifiable results.",
+    closingTitle: "Measuring success by what changes.",
     closing:
       "True social impact is never defined by how many people we touch. It is measured entirely by what permanently improves because we were there.",
     pillars: [
