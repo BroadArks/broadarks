@@ -23,7 +23,7 @@ export default function PrivacyPage() {
 
       <section className="bg-white py-16 lg:py-24">
         <div className="container-x grid gap-12 lg:grid-cols-12">
-          <aside className="hidden lg:col-span-4 lg:block">
+          <aside className="hidden lg:col-span-3 lg:block">
             <nav aria-label="Policy sections" className="sticky top-32">
               <p className="eyebrow text-stone-soft">Contents</p>
               <ol className="mt-6 space-y-3 border-l border-line">
@@ -31,7 +31,7 @@ export default function PrivacyPage() {
                   <li key={s.id}>
                     <a
                       href={`#${s.id}`}
-                      className="-ml-px flex gap-3 border-l border-transparent pl-4 text-sm leading-snug text-stone transition-colors hover:border-ink hover:text-ink"
+                      className="-ml-px flex gap-3 border-l border-transparent pl-4 text-[0.95rem] leading-snug text-stone transition-colors hover:border-ink hover:text-ink"
                     >
                       <span className="w-5 shrink-0 font-sans text-xs text-sky">{String(i + 1).padStart(2, "0")}</span>
                       {s.title}
@@ -42,13 +42,13 @@ export default function PrivacyPage() {
             </nav>
           </aside>
 
-          <div className="lg:col-span-7 lg:col-start-6">
+          <div className="lg:col-span-9 lg:col-start-4 lg:pl-6">
             {PRIVACY_SECTIONS.map((s, i) => (
               <article key={s.id} id={s.id} className="scroll-mt-28 border-t border-line py-10 first:border-t-0 first:pt-0">
                 <p className="font-sans text-xs text-sky">{String(i + 1).padStart(2, "0")}</p>
-                <h2 className="mt-3 font-sans text-[clamp(1.5rem,2.4vw,2rem)] leading-tight">{s.title}</h2>
+                <h2 className="mt-3 font-sans text-[clamp(1.5rem,2.6vw,2.25rem)] leading-tight">{s.title}</h2>
 
-                <div className="mt-6 space-y-5 text-[1.0625rem] leading-relaxed text-stone">
+                <div className="mt-6 space-y-5 text-[1.0625rem] leading-relaxed text-stone lg:text-lg">
                   {s.blocks.map((b, j) =>
                     typeof b === "string" ? (
                       <p key={j}>{b}</p>
