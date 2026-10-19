@@ -99,6 +99,39 @@
   100% { background-position: 100% 60%; }
 }
 
+/* Soft circular glow that orbits behind a card. */
+.glow-orbit {
+  position: absolute;
+  inset: -7%;
+  pointer-events: none;
+  filter: blur(44px);
+  background: radial-gradient(ellipse at center, rgb(39 170 225 / 0.22), rgb(46 49 145 / 0.12) 55%, transparent 75%);
+}
+.glow-orbit::before,
+.glow-orbit::after {
+  content: "";
+  position: absolute;
+  width: 70%;
+  aspect-ratio: 1;
+  border-radius: 9999px;
+  top: 50%;
+  left: 50%;
+  margin: -35% 0 0 -35%;
+}
+.glow-orbit::before {
+  background: radial-gradient(circle, rgb(39 170 225 / 0.55), transparent 68%);
+  animation: glow-orbit 18s linear infinite;
+}
+.glow-orbit::after {
+  background: radial-gradient(circle, rgb(46 49 145 / 0.4), transparent 68%);
+  animation: glow-orbit 27s linear infinite reverse;
+  animation-delay: -7s;
+}
+@keyframes glow-orbit {
+  from { transform: rotate(0deg) translateX(26%) rotate(0deg); }
+  to { transform: rotate(360deg) translateX(26%) rotate(-360deg); }
+}
+
 html.lenis, html.lenis body { height: auto; }
 .lenis.lenis-smooth { scroll-behavior: auto !important; }
 .lenis.lenis-stopped { overflow: hidden; }
