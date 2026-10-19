@@ -100,7 +100,7 @@ export function DivisionHero({ d }) {
         <h1 className="display-1 mt-8 font-sans text-ink lg:max-w-[60%]">
           <Words text={d.name} />
         </h1>
-        <p className="mt-6 max-w-2xl font-serif text-[clamp(1.5rem,3vw,2.5rem)] italic leading-tight text-sky">
+        <p className="mt-6 max-w-2xl font-serif text-[clamp(1.5rem,3vw,2.5rem)] italic leading-tight text-ink">
           {d.tagline}
         </p>
 

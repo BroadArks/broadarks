@@ -3,6 +3,8 @@
 @theme {
   --color-ink: #2E3191;
   --color-ink-deep: #23256e;
+  /* Solid fills (primary buttons, dark bands). Same as ink by default; division pages re-point it. */
+  --color-fill: #2E3191;
   --color-sky: #27AAE1;
   --color-sky-soft: #eaf6fd;
   --color-stone: #606161;

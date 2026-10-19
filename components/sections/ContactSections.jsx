@@ -20,6 +20,7 @@ const INTERESTS = [
   "Foundation / CSR",
   "Careers",
   "Press",
+  "Others",
 ];
 
 function Field({ label, name, type = "text", value, onChange, error, placeholder, textarea }) {
