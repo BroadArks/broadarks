@@ -34,11 +34,14 @@ export default async function DivisionPage({ params }) {
   };
 
   return (
-    <div style={palette}>
-      <DivisionHero d={d} />
-      <DivisionBody d={d} />
-      <DivisionClosing d={d} />
-      <OtherDivisions current={d.slug} />
+    <>
+      <div style={palette}>
+        <DivisionHero d={d} />
+        <DivisionBody d={d} />
+        <DivisionClosing d={d} />
+        <OtherDivisions current={d.slug} />
+      </div>
+      {/* Outside the division palette so the closing CTA matches across every division page. */}
       <CTABand
         eyebrow={`Work with ${d.name}`}
         title="Start the conversation."
@@ -46,6 +49,6 @@ export default async function DivisionPage({ params }) {
         primary={{ href: "/contact", label: "Contact us" }}
         secondary={{ href: "/divisions", label: "All divisions" }}
       />
-    </div>
+    </>
   );
 }
