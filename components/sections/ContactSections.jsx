@@ -405,10 +405,6 @@ export function VisitUs() {
                   </a>
                 ))}
               </div>
-              <p className="mt-8 max-w-xs text-sm leading-relaxed text-stone">
-                Visits are by appointment. Write ahead and we will make sure the right people
-                are in the room.
-              </p>
             </Reveal>
           </div>
 

@@ -24,7 +24,7 @@ export function DivisionBlock({ d, i }) {
         <div className={`mt-12 grid items-center gap-12 lg:grid-cols-12 lg:gap-16 ${flip ? "lg:[direction:rtl]" : ""}`}>
           <div className="lg:col-span-6 lg:[direction:ltr]">
             <Parallax distance={30}>
-              <CurtainMedia tone="bg-white border border-line" ratio="aspect-[5/4]">
+              <CurtainMedia tone="gradient-drift border border-line" ratio="aspect-[5/4]">
                 <img src={d.logo} alt={d.name} className="max-h-[36%] w-[60%] object-contain" />
               </CurtainMedia>
             </Parallax>
@@ -68,20 +68,20 @@ export function DivisionHero({ d }) {
   const scale = useTransform(scrollYProgress, [0, 1], [1, 1.08]);
 
   return (
-    <section ref={ref} className="relative overflow-hidden border-b border-line bg-white">
-      {/* The division logo, oversized and faded, is the hero backdrop. */}
+    <section ref={ref} className="gradient-drift relative overflow-hidden border-b border-line">
+      {/* Full-colour division logo over a drifting brand tint; it keeps to the space the copy leaves free. */}
       <motion.div
         style={{ y, scale }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.4, ease: EASE }}
-        className="pointer-events-none absolute inset-x-[6vw] top-24 h-40 sm:h-48 lg:inset-x-auto lg:bottom-[32%] lg:right-[4vw] lg:top-28 lg:h-auto lg:w-[34%]"
+        className="pointer-events-none absolute inset-x-[6vw] top-28 h-24 sm:h-32 lg:inset-x-auto lg:bottom-[30%] lg:right-[5vw] lg:top-32 lg:h-auto lg:w-[30%]"
         aria-hidden
       >
-        <img src={d.logo} alt="" className="h-full w-full object-contain opacity-[0.1] lg:object-right" />
+        <img src={d.logo} alt="" className="h-full w-full object-contain object-left lg:object-center" />
       </motion.div>
 
-      <div className="container-x relative flex min-h-[80svh] flex-col justify-end pb-14 pt-72 sm:min-h-[86svh] sm:pt-80 lg:pb-24 lg:pt-40">
+      <div className="container-x relative flex min-h-[80svh] flex-col justify-end pb-14 pt-64 sm:min-h-[86svh] sm:pt-72 lg:pb-24 lg:pt-40">
         <motion.div
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
