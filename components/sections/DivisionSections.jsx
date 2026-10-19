@@ -24,9 +24,12 @@ export function DivisionBlock({ d, i }) {
         <div className={`mt-12 grid items-center gap-12 lg:grid-cols-12 lg:gap-16 ${flip ? "lg:[direction:rtl]" : ""}`}>
           <div className="lg:col-span-6 lg:[direction:ltr]">
             <Parallax distance={30}>
-              <CurtainMedia tone="gradient-drift border border-line" ratio="aspect-[5/4]">
-                <img src={d.logo} alt={d.name} className="max-h-[36%] w-[60%] object-contain" />
-              </CurtainMedia>
+              <div className="relative">
+                <div className="glow-orbit" aria-hidden />
+                <CurtainMedia tone="bg-white border border-line" ratio="aspect-[5/4]">
+                  <img src={d.logo} alt={d.name} className="max-h-[36%] w-[60%] object-contain" />
+                </CurtainMedia>
+              </div>
             </Parallax>
           </div>
 

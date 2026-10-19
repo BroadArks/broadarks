@@ -135,7 +135,7 @@ export const CONTACT = {
   company: "BroadArks Technology Pvt. Ltd.",
   addressLines: [
     "CP-02, 7th Floor, Block C1, Sagar Premium Tower Phase-1",
-    "JK Hospital Road, Kolar, Bhopal-462042",
+    "JK Hospital Road, Kolar, Bhopal-462042, India",
   ],
   city: "Bhopal, India",
   phones: [
