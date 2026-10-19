@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "framer-motion";
 import Logo from "./Logo";
 import { ButtonLink } from "./ArrowLink";
-import { DIVISIONS, NAV } from "@/data/site";
+import { CONTACT, DIVISIONS, NAV } from "@/data/site";
 
 const EASE = [0.16, 1, 0.3, 1];
 
@@ -112,9 +112,11 @@ export default function Header() {
                                   key={d.slug}
                                   href={`/divisions/${d.slug}`}
                                   onClick={() => setMenu(null)}
-                                  className="group flex items-baseline gap-3 px-4 py-3 transition-colors duration-300 hover:bg-shell"
+                                  className="group flex items-center gap-4 px-4 py-3 transition-colors duration-300 hover:bg-shell"
                                 >
-                                  <span className="font-sans text-[0.7rem] text-sky">{d.index}</span>
+                                  <span className="flex h-9 w-16 shrink-0 items-center justify-center">
+                                    <img src={d.logo} alt="" className="max-h-full max-w-full object-contain" />
+                                  </span>
                                   <span className="min-w-0">
                                     <span className="block font-sans text-sm tracking-tight text-ink">{d.name}</span>
                                     <span className="mt-0.5 block truncate text-xs text-stone">{d.tagline}</span>
@@ -260,8 +262,9 @@ export default function Header() {
                 className="mt-auto space-y-1 pt-10 text-sm text-stone"
               >
                 <p className="eyebrow text-stone-soft">Get in touch</p>
-                <a href="mailto:hello@broadarks.com" className="block text-ink">hello@broadarks.com</a>
-                <p>New Delhi · India</p>
+                <a href={`mailto:${CONTACT.email}`} className="block text-ink">{CONTACT.email}</a>
+                <a href={CONTACT.phones[0].href} className="block">{CONTACT.phones[0].label}</a>
+                <p>{CONTACT.city}</p>
               </motion.div>
             </div>
           </motion.div>

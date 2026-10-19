@@ -28,7 +28,7 @@ export function AboutIntro() {
             className="h-[42vh] w-full lg:h-[72vh]"
           />
           <div className="mt-6 flex flex-wrap items-center justify-between gap-4 text-xs text-stone-soft">
-            <span>BroadArks House · New Delhi</span>
+            <span>BroadArks · Bhopal</span>
             <span>Est. March 2020</span>
           </div>
         </div>

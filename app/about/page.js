@@ -24,7 +24,7 @@ export default function AboutPage() {
         lead="Founded in March 2020 by Mr. Pankaj Dutta and Dr. Kaveri Dutta, BroadArks brings enterprise, technology and human development under one shared ambition: to create meaningful progress for people, businesses and communities."
         meta={[
           { label: "Founded", value: "March 2020" },
-          { label: "Headquarters", value: "New Delhi, India" },
+          { label: "Headquarters", value: "Bhopal, India" },
           { label: "Structure", value: "Parent company" },
           { label: "Divisions", value: "Four, incl. a foundation" },
         ]}

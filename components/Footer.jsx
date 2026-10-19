@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import Logo from "./Logo";
 import { ArrowLink } from "./ArrowLink";
 import { Reveal, Rule } from "./Motion";
-import { DIVISIONS, NAV } from "@/data/site";
+import { CONTACT, DIVISIONS, NAV } from "@/data/site";
 import { SOCIALS } from "./Social";
 
 export default function Footer() {
@@ -84,19 +84,26 @@ export default function Footer() {
               <p className="eyebrow text-stone-soft">Get in touch</p>
               <ul className="mt-6 space-y-3.5 text-[0.95rem]">
                 <li>
-                  <a href="mailto:hello@broadarks.com" className="text-ink transition-colors hover:text-sky">
-                    hello@broadarks.com
+                  <a href={`mailto:${CONTACT.email}`} className="text-ink transition-colors hover:text-sky">
+                    {CONTACT.email}
                   </a>
                 </li>
                 <li>
-                  <a href="tel:+911140000000" className="text-stone transition-colors hover:text-ink">
-                    +91 11 4000 0000
+                  <a href={`mailto:${CONTACT.careersEmail}`} className="text-stone transition-colors hover:text-ink">
+                    {CONTACT.careersEmail}
                   </a>
                 </li>
-                <li className="text-stone">
-                  BroadArks House
-                  <br />
-                  New Delhi, India
+                {CONTACT.phones.map((ph) => (
+                  <li key={ph.href}>
+                    <a href={ph.href} className="text-stone transition-colors hover:text-ink">
+                      {ph.label}
+                    </a>
+                  </li>
+                ))}
+                <li className="text-sm leading-relaxed text-stone">
+                  {CONTACT.addressLines.map((line) => (
+                    <span key={line} className="block">{line}</span>
+                  ))}
                 </li>
               </ul>
               <div className="mt-6">

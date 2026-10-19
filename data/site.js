@@ -29,6 +29,7 @@ export const DIVISIONS = [
     site: "ynow.in",
     index: "01",
     art: "/img/division-ynow.svg",
+    logo: "/img/logos/ynow.png",
     hero: "/img/hero-ynow.svg",
   },
   {
@@ -61,6 +62,7 @@ export const DIVISIONS = [
     site: "vihanga.ai",
     index: "02",
     art: "/img/division-vihanga.svg",
+    logo: "/img/logos/vihanga.png",
     hero: "/img/hero-vihanga.svg",
   },
   {
@@ -95,6 +97,7 @@ export const DIVISIONS = [
     site: "karigreen.com",
     index: "03",
     art: "/img/division-karigreen.svg",
+    logo: "/img/logos/karigreen.png",
     hero: "/img/hero-karigreen.svg",
   },
   {
@@ -127,9 +130,26 @@ export const DIVISIONS = [
     site: "broadarksfoundation.org",
     index: "04",
     art: "/img/division-foundation.svg",
+    logo: "/img/logos/foundation.png",
     hero: "/img/hero-foundation.svg",
   },
 ];
+
+export const CONTACT = {
+  company: "BroadArks Technology Pvt. Ltd.",
+  addressLines: [
+    "CP-02, 7th Floor, Block C1, Sagar Premium Tower Phase-1",
+    "JK Hospital Road, Kolar, Bhopal-462042",
+  ],
+  city: "Bhopal, India",
+  phones: [
+    { label: "0755 3553372", href: "tel:+917553553372" },
+    { label: "0755 4566266", href: "tel:+917554566266" },
+  ],
+  email: "info@broadarks.com",
+  careersEmail: "careers@broadarks.com",
+  mapsUrl: "https://maps.google.com/?cid=7914312377411759574",
+};
 
 export const FOUNDERS = [
   {

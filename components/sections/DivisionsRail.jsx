@@ -114,12 +114,15 @@ function RailCard({ d, mobile = false }) {
       </div>
 
       <div className={`relative flex flex-col ${mobile ? "mt-10" : "mt-6 min-h-0 flex-1"}`}>
-        <div className={`mb-6 overflow-hidden bg-shell ${mobile ? "h-32 md:h-40" : "min-h-[4rem] flex-1 max-h-40"}`}>
+        <div className={`relative mb-6 overflow-hidden bg-shell ${mobile ? "h-32 md:h-40" : "min-h-[4rem] flex-1 max-h-40"}`}>
           <img
             src={d.art}
             alt=""
             className="h-full w-full object-cover transition-transform duration-[1.2s] ease-[cubic-bezier(.16,1,.3,1)] group-hover:scale-110"
           />
+          <span className="absolute inset-0 m-auto flex h-[68%] w-[60%] items-center justify-center bg-white px-[6%] py-[4%]">
+            <img src={d.logo} alt="" className="max-h-full max-w-full object-contain" />
+          </span>
         </div>
         <h3 className="font-sans text-[2rem] leading-none tracking-tight text-ink">{d.name}</h3>
         <p className="mt-3 font-serif text-xl italic text-sky">{d.tagline}</p>

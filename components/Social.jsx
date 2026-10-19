@@ -27,8 +27,17 @@ export function InstagramIcon({ className = base }) {
   );
 }
 
+export function FacebookIcon({ className = base }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} fill="currentColor" aria-hidden>
+      <path d="M13.5 21v-7.5h2.53l.38-2.94H13.5V8.69c0-.85.24-1.43 1.46-1.43h1.56V4.63a20.9 20.9 0 0 0-2.27-.12c-2.25 0-3.79 1.37-3.79 3.9v2.17H7.92v2.94h2.54V21Z" />
+    </svg>
+  );
+}
+
 export const SOCIALS = [
-  { label: "LinkedIn", href: "https://www.linkedin.com/", icon: <LinkedInIcon /> },
-  { label: "X", href: "https://x.com/", icon: <XIcon /> },
-  { label: "Instagram", href: "https://www.instagram.com/", icon: <InstagramIcon /> },
+  { label: "LinkedIn", href: "https://www.linkedin.com/company/broadarks/posts/?feedView=all", icon: <LinkedInIcon /> },
+  { label: "X", href: "https://x.com/BroadarksTech", icon: <XIcon /> },
+  { label: "Instagram", href: "https://www.instagram.com/broadarkstech/", icon: <InstagramIcon /> },
+  { label: "Facebook", href: "https://www.facebook.com/BroadArksTech", icon: <FacebookIcon /> },
 ];

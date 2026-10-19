@@ -24,7 +24,11 @@ export function DivisionBlock({ d, i }) {
         <div className={`mt-12 grid items-center gap-12 lg:grid-cols-12 lg:gap-16 ${flip ? "lg:[direction:rtl]" : ""}`}>
           <div className="lg:col-span-6 lg:[direction:ltr]">
             <Parallax distance={30}>
-              <CurtainMedia src={d.art} alt={d.name} ratio="aspect-[5/4]" />
+              <CurtainMedia src={d.art} alt="" ratio="aspect-[5/4]">
+                <span className="flex h-[42%] w-[62%] items-center justify-center bg-white px-[7%] py-[5%] shadow-[0_24px_60px_-34px_rgba(16,16,20,0.45)]">
+                  <img src={d.logo} alt={d.name} className="max-h-full max-w-full object-contain" />
+                </span>
+              </CurtainMedia>
             </Parallax>
           </div>
 
@@ -83,6 +87,15 @@ export function DivisionHero({ d }) {
           </Link>
           <span className="text-white/30">/</span>
           <span className="eyebrow text-white/80">{d.category.split("/")[1]}</span>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.1, ease: EASE }}
+          className="mt-8 inline-flex w-fit bg-white px-5 py-4"
+        >
+          <img src={d.logo} alt={`${d.name} logo`} className="h-11 w-auto max-w-[15rem] object-contain sm:h-14" />
         </motion.div>
 
         <h1 className="display-1 mt-8 font-sans text-white">
@@ -227,13 +240,16 @@ export function OtherDivisions({ current }) {
           {others.map((d, i) => (
             <Reveal key={d.slug} delay={i * 0.06}>
               <Link href={`/divisions/${d.slug}`} className="group block">
-                <div className="mb-6 aspect-[16/10] overflow-hidden bg-shell">
+                <div className="relative mb-6 aspect-[16/10] overflow-hidden bg-shell">
                   <img
                     src={d.art}
                     alt=""
                     className="h-full w-full object-cover transition-transform duration-[1.4s] ease-[cubic-bezier(.16,1,.3,1)] group-hover:scale-110"
                     loading="lazy"
                   />
+                  <span className="absolute inset-0 m-auto flex h-[46%] w-[64%] items-center justify-center bg-white px-[7%] py-[5%]">
+                    <img src={d.logo} alt="" className="max-h-full max-w-full object-contain" loading="lazy" />
+                  </span>
                 </div>
                 <h3 className="font-sans text-xl text-ink">{d.name}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-stone">{d.summary}</p>

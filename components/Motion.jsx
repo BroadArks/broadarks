@@ -202,7 +202,7 @@ export function ZoomMedia({ src, alt, className = "", imgClass = "", intensity =
 }
 
 /* ---------- Curtain reveal for media ---------- */
-export function CurtainMedia({ src, alt, className = "", ratio = "aspect-[4/5]" }) {
+export function CurtainMedia({ src, alt, className = "", ratio = "aspect-[4/5]", children }) {
   return (
     <div className={`relative overflow-hidden bg-shell ${ratio} ${className}`}>
       <motion.img
@@ -215,6 +215,7 @@ export function CurtainMedia({ src, alt, className = "", ratio = "aspect-[4/5]" 
         transition={{ duration: 1.5, ease: EASE }}
         loading="lazy"
       />
+      {children && <div className="absolute inset-0 flex items-center justify-center">{children}</div>}
       <motion.span
         className="absolute inset-0 bg-ink"
         initial={{ scaleY: 1 }}
