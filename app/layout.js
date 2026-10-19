@@ -24,6 +24,13 @@ export const metadata = {
   },
   description:
     "Founded in 2020 by Mr. Pankaj Dutta and Dr. Kaveri Dutta, BroadArks brings enterprise, technology and human development under one shared ambition: meaningful progress for people, businesses and communities.",
+  // Navy mark on light browser chrome, white mark on dark.
+  icons: {
+    icon: [
+      { url: "/favicon-light.png", type: "image/png", media: "(prefers-color-scheme: light)" },
+      { url: "/favicon-dark.png", type: "image/png", media: "(prefers-color-scheme: dark)" },
+    ],
+  },
   openGraph: {
     title: "BroadArks",
     description: "Building human possibility for a technology-shaped future.",

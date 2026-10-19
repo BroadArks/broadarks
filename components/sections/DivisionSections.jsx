@@ -5,7 +5,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { SectionLabel } from "@/components/Section";
 import { ArrowLink, ButtonLink } from "@/components/ArrowLink";
-import { CurtainMedia, Parallax, Reveal, Rule, Words, ZoomMedia } from "@/components/Motion";
+import { CurtainMedia, Parallax, Reveal, Rule, Words } from "@/components/Motion";
 import { DIVISIONS } from "@/data/site";
 
 const EASE = [0.16, 1, 0.3, 1];
@@ -24,10 +24,8 @@ export function DivisionBlock({ d, i }) {
         <div className={`mt-12 grid items-center gap-12 lg:grid-cols-12 lg:gap-16 ${flip ? "lg:[direction:rtl]" : ""}`}>
           <div className="lg:col-span-6 lg:[direction:ltr]">
             <Parallax distance={30}>
-              <CurtainMedia src={d.art} alt="" ratio="aspect-[5/4]">
-                <span className="flex h-[42%] w-[62%] items-center justify-center bg-white px-[7%] py-[5%] shadow-[0_24px_60px_-34px_rgba(16,16,20,0.45)]">
-                  <img src={d.logo} alt={d.name} className="max-h-full max-w-full object-contain" />
-                </span>
+              <CurtainMedia tone="bg-white border border-line" ratio="aspect-[5/4]">
+                <img src={d.logo} alt={d.name} className="max-h-[36%] w-[60%] object-contain" />
               </CurtainMedia>
             </Parallax>
           </div>
@@ -66,39 +64,38 @@ export function DivisionBlock({ d, i }) {
 export function DivisionHero({ d }) {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "18%"]);
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.12]);
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "14%"]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.08]);
 
   return (
-    <section ref={ref} className="relative overflow-hidden bg-ink">
-      <motion.div style={{ y, scale }} className="absolute inset-0">
-        <img src={d.hero} alt="" className="h-full w-full object-cover opacity-45" />
+    <section ref={ref} className="relative overflow-hidden border-b border-line bg-white">
+      {/* The division logo, oversized and faded, is the hero backdrop. */}
+      <motion.div
+        style={{ y, scale }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.4, ease: EASE }}
+        className="pointer-events-none absolute inset-x-[6vw] top-24 h-40 sm:h-48 lg:inset-x-auto lg:bottom-[32%] lg:right-[4vw] lg:top-28 lg:h-auto lg:w-[34%]"
+        aria-hidden
+      >
+        <img src={d.logo} alt="" className="h-full w-full object-contain opacity-[0.1] lg:object-right" />
       </motion.div>
 
-      <div className="container-x relative flex min-h-[80svh] flex-col justify-end pb-14 pt-32 sm:min-h-[86svh] lg:pb-24 lg:pt-40">
+      <div className="container-x relative flex min-h-[80svh] flex-col justify-end pb-14 pt-72 sm:min-h-[86svh] sm:pt-80 lg:pb-24 lg:pt-40">
         <motion.div
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: EASE }}
           className="flex items-center gap-3"
         >
-          <Link href="/divisions" className="eyebrow text-white/50 transition-colors hover:text-white">
+          <Link href="/divisions" className="eyebrow text-stone-soft transition-colors hover:text-ink">
             Divisions
           </Link>
-          <span className="text-white/30">/</span>
-          <span className="eyebrow text-white/80">{d.category.split("/")[1]}</span>
+          <span className="text-line">/</span>
+          <span className="eyebrow text-stone">{d.category.split("/")[1]}</span>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 14 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.1, ease: EASE }}
-          className="mt-8 inline-flex w-fit bg-white px-5 py-4"
-        >
-          <img src={d.logo} alt={`${d.name} logo`} className="h-11 w-auto max-w-[15rem] object-contain sm:h-14" />
-        </motion.div>
-
-        <h1 className="display-1 mt-8 font-sans text-white">
+        <h1 className="display-1 mt-8 font-sans text-ink lg:max-w-[60%]">
           <Words text={d.name} />
         </h1>
         <p className="mt-6 max-w-2xl font-serif text-[clamp(1.5rem,3vw,2.5rem)] italic leading-tight text-sky">
@@ -109,15 +106,15 @@ export function DivisionHero({ d }) {
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.5, ease: EASE }}
-          className="mt-10 flex flex-col items-start gap-5 border-t border-white/15 pt-8 sm:flex-row sm:items-center sm:gap-x-10 lg:mt-12"
+          className="mt-10 flex flex-col items-start gap-5 border-t border-line pt-8 sm:flex-row sm:items-center sm:gap-x-10 lg:mt-12"
         >
           {d.kicker.length > 90 ? (
-            <p className="max-w-2xl text-sm leading-relaxed text-white/70">{d.kicker}</p>
+            <p className="max-w-2xl text-sm leading-relaxed text-stone">{d.kicker}</p>
           ) : (
-            <span className="eyebrow text-white/60">{d.kicker}</span>
+            <span className="eyebrow text-stone">{d.kicker}</span>
           )}
           <span className="sm:ml-auto">
-            <ArrowLink href={d.href} external light>
+            <ArrowLink href={d.href} external>
               Visit {d.site}
             </ArrowLink>
           </span>
@@ -199,7 +196,11 @@ export function DivisionClosing({ d }) {
   return (
     <section className="bg-shell py-24 lg:py-36">
       <div className="container-x">
-        <ZoomMedia src={d.hero} alt="" className="h-[36vh] w-full lg:h-[56vh]" />
+        <div className="flex h-[36vh] w-full items-center justify-center border border-line bg-white lg:h-[56vh]">
+          <Reveal>
+            <img src={d.logo} alt="" className="h-24 w-auto max-w-[70vw] object-contain sm:h-32 lg:h-40" />
+          </Reveal>
+        </div>
         <div className="mt-14 grid gap-10 lg:grid-cols-12">
           <div className="lg:col-span-2">
             <SectionLabel>In short</SectionLabel>
@@ -240,16 +241,13 @@ export function OtherDivisions({ current }) {
           {others.map((d, i) => (
             <Reveal key={d.slug} delay={i * 0.06}>
               <Link href={`/divisions/${d.slug}`} className="group block">
-                <div className="relative mb-6 aspect-[16/10] overflow-hidden bg-shell">
+                <div className="mb-6 flex aspect-[16/10] items-center justify-center overflow-hidden border border-line bg-white">
                   <img
-                    src={d.art}
+                    src={d.logo}
                     alt=""
-                    className="h-full w-full object-cover transition-transform duration-[1.4s] ease-[cubic-bezier(.16,1,.3,1)] group-hover:scale-110"
+                    className="max-h-[38%] w-[58%] object-contain transition-transform duration-[1.4s] ease-[cubic-bezier(.16,1,.3,1)] group-hover:scale-105"
                     loading="lazy"
                   />
-                  <span className="absolute inset-0 m-auto flex h-[46%] w-[64%] items-center justify-center bg-white px-[7%] py-[5%]">
-                    <img src={d.logo} alt="" className="max-h-full max-w-full object-contain" loading="lazy" />
-                  </span>
                 </div>
                 <h3 className="font-sans text-xl text-ink">{d.name}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-stone">{d.summary}</p>

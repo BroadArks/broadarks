@@ -25,8 +25,8 @@ export default function Header() {
     setHidden(y > prev && y > 220);
   });
 
-  const darkHero = /^\/divisions\/.+/.test(pathname);
-  const light = darkHero && !solid && !open;
+  // No page has a dark hero any more; kept so the light treatment can be re-enabled per route.
+  const light = false;
 
   useEffect(() => {
     setOpen(false);
