@@ -24,8 +24,17 @@ export default async function DivisionPage({ params }) {
   const d = DIVISIONS.find((x) => x.slug === slug);
   if (!d) notFound();
 
+  // Re-point the theme colours at the division's palette for everything on this page.
+  const palette = {
+    "--color-ink": d.theme.ink,
+    "--color-ink-deep": d.theme.inkDeep,
+    "--color-sky": d.theme.sky,
+    "--color-sky-soft": d.theme.skySoft,
+    "--color-tint": d.theme.tint,
+  };
+
   return (
-    <>
+    <div style={palette}>
       <DivisionHero d={d} />
       <DivisionBody d={d} />
       <DivisionClosing d={d} />
@@ -37,6 +46,6 @@ export default async function DivisionPage({ params }) {
         primary={{ href: "/contact", label: "Contact us" }}
         secondary={{ href: "/divisions", label: "All divisions" }}
       />
-    </>
+    </div>
   );
 }
