@@ -86,10 +86,10 @@
     120deg,
     #ffffff 0%,
     var(--color-sky-soft) 22%,
-    #eef0fb 45%,
+    var(--color-tint, #eef0fb) 45%,
     #ffffff 62%,
     var(--color-sky-soft) 82%,
-    #eef0fb 100%
+    var(--color-tint, #eef0fb) 100%
   );
   background-size: 300% 300%;
   animation: gradient-drift 16s ease-in-out infinite alternate;
