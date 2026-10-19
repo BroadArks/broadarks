@@ -102,7 +102,7 @@ export const DIVISIONS = [
     name: "BroadArks Foundation",
     category: "One World / Social Development",
     tagline: "Building Inclusive Systems for Lasting Social Transformation.",
-    kicker: "Access, Systems, Data, and Outcomes.",
+    kicker: "Inclusive Access. Stronger Systems. Measurable Impact.",
     disciplines: ["Access", "Systems", "Data", "Outcomes"],
     summary:
       "Driving grassroots initiatives that empower local populations with sustainable livelihoods and financial independence.",
