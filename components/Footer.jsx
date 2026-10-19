@@ -146,7 +146,7 @@ export default function Footer() {
           <p>© {new Date().getFullYear()} BroadArks. All rights reserved.</p>
           <div className="flex flex-wrap items-center gap-6">
             <Link href="/privacy" className="transition-colors hover:text-ink">Privacy</Link>
-            <a href="#" className="transition-colors hover:text-ink">Terms</a>
+            <Link href="/terms-conditions" className="transition-colors hover:text-ink">Terms</Link>
             <button
               type="button"
               onClick={scrollTop}
