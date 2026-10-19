@@ -30,7 +30,7 @@ export const DIVISIONS = [
     art: "/img/division-ynow.svg",
     logo: "/img/logos/ynow.png",
     // Page palette sampled from the logo; applied subtly on the division page only.
-    theme: { ink: "#2B3192", inkDeep: "#212672", sky: "#22A9E0", skySoft: "#e8f6fd", tint: "#eef0fb" },
+    theme: { fill: "#2B3192", sky: "#22A9E0", skySoft: "#e8f6fd", tint: "#eef0fb" },
     hero: "/img/hero-ynow.svg",
   },
   {
@@ -63,7 +63,7 @@ export const DIVISIONS = [
     index: "02",
     art: "/img/division-vihanga.svg",
     logo: "/img/logos/vihanga.png",
-    theme: { ink: "#003366", inkDeep: "#00264d", sky: "#A97F00", skySoft: "#fdf6dc", tint: "#eaf0f8" },
+    theme: { fill: "#003366", sky: "#A97F00", skySoft: "#fdf6dc", tint: "#eaf0f8" },
     hero: "/img/hero-vihanga.svg",
   },
   {
@@ -98,7 +98,7 @@ export const DIVISIONS = [
     index: "03",
     art: "/img/division-karigreen.svg",
     logo: "/img/logos/karigreen.png",
-    theme: { ink: "#1F4E27", inkDeep: "#173b1d", sky: "#2F7A3A", skySoft: "#edf5ec", tint: "#f7f0e4" },
+    theme: { fill: "#1F4E27", sky: "#2F7A3A", skySoft: "#edf5ec", tint: "#f7f0e4" },
     hero: "/img/hero-karigreen.svg",
   },
   {
@@ -131,7 +131,7 @@ export const DIVISIONS = [
     index: "04",
     art: "/img/division-foundation.svg",
     logo: "/img/logos/foundation.png",
-    theme: { ink: "#15181D", inkDeep: "#000000", sky: "#27AAE1", skySoft: "#e9f6fd", tint: "#f1f3f6" },
+    theme: { fill: "#15181D", sky: "#27AAE1", skySoft: "#e9f6fd", tint: "#f1f3f6" },
     hero: "/img/hero-foundation.svg",
   },
 ];
