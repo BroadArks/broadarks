@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { SectionLabel } from "@/components/Section";
 import { ArrowLink } from "@/components/ArrowLink";
 import { Reveal, Words } from "@/components/Motion";
-import { DIVISIONS } from "@/data/site";
+import { CONTACT, DIVISIONS } from "@/data/site";
 
 const EASE = [0.16, 1, 0.3, 1];
 
@@ -115,12 +115,17 @@ export function ContactForm() {
               right desk, usually within two working days.
             </p>
             <div className="mt-8 space-y-2 text-sm">
-              <a href="mailto:hello@broadarks.com" className="block text-ink transition-colors hover:text-sky">
-                hello@broadarks.com
+              <a href={`mailto:${CONTACT.email}`} className="block text-ink transition-colors hover:text-sky">
+                {CONTACT.email}
               </a>
-              <a href="tel:+911140000000" className="block text-stone transition-colors hover:text-ink">
-                +91 11 4000 0000
+              <a href={`mailto:${CONTACT.careersEmail}`} className="block text-stone transition-colors hover:text-ink">
+                {CONTACT.careersEmail}
               </a>
+              {CONTACT.phones.map((ph) => (
+                <a key={ph.href} href={ph.href} className="block text-stone transition-colors hover:text-ink">
+                  {ph.label}
+                </a>
+              ))}
             </div>
           </div>
         </div>
@@ -253,8 +258,8 @@ export function DivisionContacts() {
             <Reveal key={d.slug} delay={i * 0.06}>
               <div className="group flex h-full flex-col justify-between border-b border-line py-8">
                 <div>
-                  <span className="font-sans text-xs text-sky">{d.index}</span>
-                  <h3 className="mt-3 font-sans text-lg text-ink">{d.name}</h3>
+                  <img src={d.logo} alt="" className="h-11 w-auto max-w-[9rem] object-contain object-left" />
+                  <h3 className="mt-5 font-sans text-lg text-ink">{d.name}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-stone">{d.summary}</p>
                 </div>
                 <div className="mt-6 space-y-3">
@@ -376,7 +381,7 @@ export function VisitUs() {
             </h2>
           </div>
           <ArrowLink
-            href="https://www.google.com/maps/search/?api=1&query=BroadArks+Technology+Pvt.+Ltd."
+            href={CONTACT.mapsUrl}
             external
           >
             Open in Google Maps
@@ -387,25 +392,24 @@ export function VisitUs() {
           <div className="lg:col-span-4">
             <Reveal>
               <p className="eyebrow text-stone-soft">Office</p>
-              <p className="mt-3 text-[1.0625rem] leading-relaxed text-ink">
-                BroadArks Technology Pvt. Ltd.
-              </p>
+              <p className="mt-3 text-[1.0625rem] leading-relaxed text-ink">{CONTACT.company}</p>
               <p className="mt-2 text-sm leading-relaxed text-stone">
-                Bhopal, Madhya Pradesh, India
+                {CONTACT.addressLines.map((line) => (
+                  <span key={line} className="block">{line}</span>
+                ))}
               </p>
               <div className="mt-8 space-y-2 text-sm">
-                <a
-                  href="mailto:hello@broadarks.com"
-                  className="block text-ink transition-colors hover:text-sky"
-                >
-                  hello@broadarks.com
+                <a href={`mailto:${CONTACT.email}`} className="block text-ink transition-colors hover:text-sky">
+                  {CONTACT.email}
                 </a>
-                <a
-                  href="tel:+911140000000"
-                  className="block text-stone transition-colors hover:text-ink"
-                >
-                  +91 11 4000 0000
+                <a href={`mailto:${CONTACT.careersEmail}`} className="block text-stone transition-colors hover:text-ink">
+                  {CONTACT.careersEmail}
                 </a>
+                {CONTACT.phones.map((ph) => (
+                  <a key={ph.href} href={ph.href} className="block text-stone transition-colors hover:text-ink">
+                    {ph.label}
+                  </a>
+                ))}
               </div>
               <p className="mt-8 max-w-xs text-sm leading-relaxed text-stone">
                 Visits are by appointment. Write ahead and we will make sure the right people
@@ -419,7 +423,7 @@ export function VisitUs() {
               <div className="aspect-[16/10] w-full overflow-hidden border border-line bg-shell sm:aspect-[16/9]">
                 <iframe
                   src={MAPS_EMBED_SRC}
-                  title="BroadArks Technology Pvt. Ltd. on Google Maps"
+                  title={`${CONTACT.company} on Google Maps`}
                   className="h-full w-full border-0"
                   loading="lazy"
                   allowFullScreen

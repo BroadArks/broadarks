@@ -5,6 +5,7 @@ import {
   FAQ,
   VisitUs,
 } from "@/components/sections/ContactSections";
+import { CONTACT } from "@/data/site";
 
 export const metadata = {
   title: "Contact",
@@ -20,9 +21,9 @@ export default function ContactPage() {
         accent="conversation."
         lead="Learners, institutions, industry partners, investors, funders and the simply curious. Every useful thing we have built began with somebody writing in."
         meta={[
-          { label: "General", value: "hello@broadarks.com" },
-          { label: "Phone", value: "+91 11 4000 0000" },
-          { label: "Head office", value: "New Delhi, India" },
+          { label: "General", value: CONTACT.email },
+          { label: "Phone", value: CONTACT.phones.map((ph) => ph.label.replace(/ /g, "\u00a0")).join(" · ") },
+          { label: "Head office", value: CONTACT.city },
           { label: "Response time", value: "Within 2 working days" },
         ]}
       />

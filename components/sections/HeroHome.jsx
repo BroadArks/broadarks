@@ -101,12 +101,12 @@ export default function HeroHome() {
               }}
               className="group border-t border-line py-5"
             >
-              <Link href={`/divisions/${d.slug}`} className="flex items-baseline justify-between gap-4">
+              <Link href={`/divisions/${d.slug}`} className="flex items-center justify-between gap-4">
                 <span className="font-sans text-[1.0625rem] text-ink transition-transform duration-500 ease-[cubic-bezier(.16,1,.3,1)] group-hover:translate-x-1 sm:text-[1.1875rem]">
                   {d.name}
                 </span>
-                <span className="shrink-0 text-[0.75rem] uppercase tracking-[0.14em] text-stone-soft">
-                  {d.index}
+                <span className="flex h-7 w-20 shrink-0 items-center justify-end">
+                  <img src={d.logo} alt="" className="max-h-full max-w-full object-contain" />
                 </span>
               </Link>
             </motion.li>
