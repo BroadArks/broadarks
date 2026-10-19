@@ -46,20 +46,20 @@ export function ButtonLink({ href, children, external = false, variant = "ink", 
   const props = external ? { href, target: "_blank", rel: "noreferrer noopener" } : { href };
 
   const styles = {
-    ink: "border-ink bg-ink text-white",
+    ink: "border-fill bg-fill text-white",
     outline: "border-ink/25 bg-transparent text-ink",
     light: "border-white/35 bg-transparent text-white",
-    lightSolid: "border-white bg-white text-ink",
+    lightSolid: "border-white bg-white text-fill",
   }[variant];
 
   // Hover fills invert the button completely so the label always stays legible.
-  const fill = { ink: "bg-white", outline: "bg-ink", light: "bg-white", lightSolid: "bg-ink" }[variant];
+  const fill = { ink: "bg-white", outline: "bg-ink", light: "bg-white", lightSolid: "bg-fill" }[variant];
   // `hover:` (not `group-hover:`) — the element carries `group` itself,
   // so it is never a descendant of its own group.
   const hoverText = {
-    ink: "hover:text-ink",
+    ink: "hover:text-fill",
     outline: "hover:text-white",
-    light: "hover:text-ink",
+    light: "hover:text-fill",
     lightSolid: "hover:text-white",
   }[variant];
 

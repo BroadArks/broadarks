@@ -3,6 +3,8 @@
 @theme {
   --color-ink: #2E3191;
   --color-ink-deep: #23256e;
+  /* Solid fills (primary buttons, dark bands). Same as ink by default; division pages re-point it. */
+  --color-fill: #2E3191;
   --color-sky: #27AAE1;
   --color-sky-soft: #eaf6fd;
   --color-stone: #606161;
@@ -99,14 +101,17 @@
   100% { background-position: 100% 60%; }
 }
 
-/* Soft light-blue glow hugging a card's edges; drifts and breathes slowly. */
+/* Faint accent-coloured glow hugging a card's edges; drifts and breathes slowly.
+   Follows --color-sky, so it picks up each division's accent on its own page. */
 .card-glow {
-  box-shadow: 0 0 44px 4px rgb(39 170 225 / 0.26);
+  --glow: color-mix(in srgb, var(--color-sky) 16%, transparent);
+  --glow-strong: color-mix(in srgb, var(--color-sky) 22%, transparent);
+  box-shadow: 0 0 36px 2px var(--glow);
   animation: card-glow 9s ease-in-out infinite;
 }
 @keyframes card-glow {
-  0%, 100% { box-shadow: -6px -4px 44px 4px rgb(39 170 225 / 0.24); }
-  50% { box-shadow: 6px 6px 56px 8px rgb(39 170 225 / 0.34); }
+  0%, 100% { box-shadow: -4px -3px 36px 2px var(--glow); }
+  50% { box-shadow: 4px 4px 44px 4px var(--glow-strong); }
 }
 
 html.lenis, html.lenis body { height: auto; }

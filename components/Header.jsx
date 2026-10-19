@@ -117,10 +117,7 @@ export default function Header() {
                                   <span className="flex h-9 w-16 shrink-0 items-center justify-center">
                                     <img src={d.logo} alt="" className="max-h-full max-w-full object-contain" />
                                   </span>
-                                  <span className="min-w-0">
-                                    <span className="block font-sans text-sm tracking-tight text-ink">{d.name}</span>
-                                    <span className="mt-0.5 block truncate text-xs text-stone">{d.tagline}</span>
-                                  </span>
+                                  <span className="min-w-0 font-sans text-sm tracking-tight text-ink">{d.name}</span>
                                 </Link>
                               ))}
                               <Link

@@ -189,7 +189,7 @@ export function CTABand({
   secondary = { href: "/divisions", label: "Explore divisions" },
 }) {
   return (
-    <section className="relative overflow-hidden bg-ink py-24 lg:py-36">
+    <section className="relative overflow-hidden bg-fill py-24 lg:py-36">
       <div className="container-x relative">
         <SectionLabel light>{eyebrow}</SectionLabel>
         <h2 className="display-2 mt-6 max-w-[18ch] font-sans text-white">

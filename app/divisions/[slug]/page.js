@@ -24,10 +24,10 @@ export default async function DivisionPage({ params }) {
   const d = DIVISIONS.find((x) => x.slug === slug);
   if (!d) notFound();
 
-  // Re-point the theme colours at the division's palette for everything on this page.
+  // Text stays neutral black; the division's colour goes to fills, accents and tints only.
   const palette = {
-    "--color-ink": d.theme.ink,
-    "--color-ink-deep": d.theme.inkDeep,
+    "--color-ink": "#15181D",
+    "--color-fill": d.theme.fill,
     "--color-sky": d.theme.sky,
     "--color-sky-soft": d.theme.skySoft,
     "--color-tint": d.theme.tint,
