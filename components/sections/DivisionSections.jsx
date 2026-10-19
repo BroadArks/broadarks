@@ -198,7 +198,7 @@ export function DivisionClosing({ d }) {
   return (
     <section className="bg-shell py-24 lg:py-36">
       <div className="container-x">
-        <div className="flex h-[36vh] w-full items-center justify-center border border-line bg-white lg:h-[56vh]">
+        <div className="card-glow flex h-[36vh] w-full items-center justify-center border border-line bg-white lg:h-[56vh]">
           <Reveal>
             <img src={d.logo} alt="" className="h-24 w-auto max-w-[70vw] object-contain sm:h-32 lg:h-40" />
           </Reveal>
@@ -243,7 +243,7 @@ export function OtherDivisions({ current }) {
           {others.map((d, i) => (
             <Reveal key={d.slug} delay={i * 0.06}>
               <Link href={`/divisions/${d.slug}`} className="group block">
-                <div className="mb-6 flex aspect-[16/10] items-center justify-center overflow-hidden border border-line bg-white">
+                <div className="card-glow mb-6 flex aspect-[16/10] items-center justify-center overflow-hidden border border-line bg-white">
                   <img
                     src={d.logo}
                     alt=""
