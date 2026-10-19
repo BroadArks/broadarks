@@ -75,9 +75,10 @@ export const DIVISIONS = [
     summary:
       "Bringing traditional artisan skills into modern enterprise by combining sustainable design with commercial reach.",
     body: [
-      "Generations of artisans carry extraordinary knowledge in their hands.",
-      "Karigreen exists to connect that heritage craft with contemporary design, digital platforms, and global markets.",
-      "Across home, lifestyle, and fashion, we use technology to refine demand planning, empower local maker clusters, and move our production choices closer to a zero-waste reality.",
+      "KARIGREEN is a purpose-driven sustainable lifestyle brand that connects traditional craftsmanship with contemporary design, circular thinking and market relevance.",
+      "KARIGREEN is a purpose-driven sustainable lifestyle brand and an initiative of BroadArks Foundation. The brand has been created with a vision to empower women, youth and artisans by connecting traditional skills with contemporary design and market-oriented products.",
+      "We work with communities to promote circular fashion, sustainable product development and heirloom crafts. Our products are handcrafted with care, using responsible design approaches that aim to minimize waste while maximizing livelihood and cultural value.",
+      "KARIGREEN believes that every product should have a purpose beyond utility. It should support a maker, preserve a craft, reduce waste and inspire conscious living.",
     ],
     overviewTitle: "Placing makers at the heart of modern commerce.",
     approachTitle: "Three pillars of responsible enterprise.",
@@ -189,9 +190,9 @@ export const TIMELINE = [
 export const POSTS = [
   {
     slug: "the-skills-gap-is-a-speed-problem",
-    title: "The skills gap is not a knowledge problem. It is a speed problem.",
+    title: "Addressing the Real Disconnect in Professional Preparedness.",
     excerpt:
-      "Curricula are designed to be stable. Industry is designed to move. The distance between the two is where careers quietly stall, and where Y&Now decided to build.",
+      "While institutional curricula focus on foundational knowledge, commercial environments demand swift execution. Y&Now bridges this systemic divide by equipping talent to transition seamlessly from academic understanding to high-impact application.",
     category: "Future Skills",
     date: "12 August 2026",
     readTime: "6 min read",
