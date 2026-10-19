@@ -145,7 +145,7 @@ export default function Footer() {
         <div className="mt-10 flex flex-col gap-4 border-t border-line pt-8 text-xs text-stone-soft sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} BroadArks. All rights reserved.</p>
           <div className="flex flex-wrap items-center gap-6">
-            <a href="#" className="transition-colors hover:text-ink">Privacy</a>
+            <Link href="/privacy" className="transition-colors hover:text-ink">Privacy</Link>
             <a href="#" className="transition-colors hover:text-ink">Terms</a>
             <button
               type="button"
