@@ -1,7 +1,6 @@
 export const DIVISIONS = [
   {
     slug: "y-and-now",
-    email: "ynow@broadarks.com",
     name: "Y&Now",
     category: "One World / Future Abilities",
     tagline: "Expertise for a World That Won't Stand Still.",
@@ -25,8 +24,8 @@ export const DIVISIONS = [
       { title: "Apply", text: "Project-led experiences that move professional competencies from theory into practice." },
       { title: "Belong", text: "Pathways into professions, communities, and careers that keep evolving." },
     ],
-    href: "https://www.ynow.in",
-    site: "ynow.in",
+    href: "https://www.yandnow.com",
+    site: "yandnow.com",
     index: "01",
     art: "/img/division-ynow.svg",
     logo: "/img/logos/ynow.png",
@@ -34,7 +33,6 @@ export const DIVISIONS = [
   },
   {
     slug: "vihanga-ai",
-    email: "vihanga@broadarks.com",
     name: "Vihanga.ai",
     category: "One World / Advanced Technology",
     tagline: "Intelligence and Autonomy for the Real World.",
@@ -67,7 +65,6 @@ export const DIVISIONS = [
   },
   {
     slug: "karigreen",
-    email: "karigreen@broadarks.com",
     name: "Karigreen",
     category: "One World / Responsible Commerce",
     tagline: "Designing for Conscious Living and Cultural Permanence.",
@@ -102,7 +99,6 @@ export const DIVISIONS = [
   },
   {
     slug: "broadarks-foundation",
-    email: "foundation@broadarks.com",
     name: "BroadArks Foundation",
     category: "One World / Social Development",
     tagline: "Building Inclusive Systems for Lasting Social Transformation.",

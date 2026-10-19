@@ -262,13 +262,7 @@ export function DivisionContacts() {
                   <h3 className="mt-5 font-sans text-lg text-ink">{d.name}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-stone">{d.summary}</p>
                 </div>
-                <div className="mt-6 space-y-3">
-                  <a
-                    href={`mailto:${d.email}`}
-                    className="block break-all text-sm text-ink transition-colors hover:text-sky"
-                  >
-                    {d.email}
-                  </a>
+                <div className="mt-6">
                   <ArrowLink href={d.href} external>
                     {d.site}
                   </ArrowLink>

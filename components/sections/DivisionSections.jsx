@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 import { SectionLabel } from "@/components/Section";
 import { ArrowLink, ButtonLink } from "@/components/ArrowLink";
 import { CurtainMedia, Parallax, Reveal, Rule, Words } from "@/components/Motion";
@@ -61,9 +62,26 @@ export function DivisionBlock({ d, i }) {
 
 /* ---------- Detail page hero ---------- */
 export function DivisionHero({ d }) {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "14%"]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.08]);
+
   return (
-    <section className="relative overflow-hidden border-b border-line bg-white">
-      <div className="container-x relative flex min-h-[80svh] flex-col justify-end pb-14 pt-32 sm:min-h-[86svh] lg:pb-24 lg:pt-40">
+    <section ref={ref} className="relative overflow-hidden border-b border-line bg-white">
+      {/* The division logo, oversized and faded, is the hero backdrop. */}
+      <motion.div
+        style={{ y, scale }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.4, ease: EASE }}
+        className="pointer-events-none absolute inset-x-[6vw] top-24 h-40 sm:h-48 lg:inset-x-auto lg:bottom-[32%] lg:right-[4vw] lg:top-28 lg:h-auto lg:w-[34%]"
+        aria-hidden
+      >
+        <img src={d.logo} alt="" className="h-full w-full object-contain opacity-[0.1] lg:object-right" />
+      </motion.div>
+
+      <div className="container-x relative flex min-h-[80svh] flex-col justify-end pb-14 pt-72 sm:min-h-[86svh] sm:pt-80 lg:pb-24 lg:pt-40">
         <motion.div
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
@@ -77,16 +95,7 @@ export function DivisionHero({ d }) {
           <span className="eyebrow text-stone">{d.category.split("/")[1]}</span>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 14 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.1, ease: EASE }}
-          className="mt-10"
-        >
-          <img src={d.logo} alt={`${d.name} logo`} className="h-16 w-auto max-w-[18rem] object-contain object-left sm:h-24 sm:max-w-[26rem]" />
-        </motion.div>
-
-        <h1 className="display-1 mt-10 font-sans text-ink">
+        <h1 className="display-1 mt-8 font-sans text-ink lg:max-w-[60%]">
           <Words text={d.name} />
         </h1>
         <p className="mt-6 max-w-2xl font-serif text-[clamp(1.5rem,3vw,2.5rem)] italic leading-tight text-sky">

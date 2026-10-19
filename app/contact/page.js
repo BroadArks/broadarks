@@ -21,8 +21,8 @@ export default function ContactPage() {
         accent="conversation."
         lead="Learners, institutions, industry partners, investors, funders and the simply curious. Every useful thing we have built began with somebody writing in."
         meta={[
-          { label: "General", value: CONTACT.email },
-          { label: "Phone", value: CONTACT.phones.map((ph) => ph.label.replace(/ /g, "\u00a0")).join(" · ") },
+          { label: "General", links: [{ label: CONTACT.email, href: `mailto:${CONTACT.email}` }] },
+          { label: "Phone", links: CONTACT.phones },
           { label: "Head office", value: CONTACT.city },
           { label: "Response time", value: "Within 2 working days" },
         ]}

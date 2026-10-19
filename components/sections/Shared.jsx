@@ -58,7 +58,21 @@ export function PageHero({ eyebrow, title, accent, lead, meta }) {
                   transition={{ duration: 0.8, delay: 0.55 + i * 0.08, ease: EASE }}
                 >
                   <p className="eyebrow text-stone-soft">{m.label}</p>
-                  <p className="mt-2 font-sans text-base text-ink">{m.value}</p>
+                  {m.links ? (
+                    <div className="mt-2 space-y-1">
+                      {m.links.map((l) => (
+                        <a
+                          key={l.href}
+                          href={l.href}
+                          className="block font-sans text-base text-ink transition-colors hover:text-sky"
+                        >
+                          {l.label}
+                        </a>
+                      ))}
+                    </div>
+                  ) : (
+                    <p className="mt-2 font-sans text-base text-ink">{m.value}</p>
+                  )}
                 </motion.div>
               ))}
             </div>
