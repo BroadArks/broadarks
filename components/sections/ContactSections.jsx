@@ -6,6 +6,7 @@ import { SectionLabel } from "@/components/Section";
 import { ArrowLink } from "@/components/ArrowLink";
 import { Reveal, Words } from "@/components/Motion";
 import { CONTACT, DIVISIONS } from "@/data/site";
+import { submitForm } from "@/lib/submissions";
 
 const EASE = [0.16, 1, 0.3, 1];
 
@@ -83,6 +84,8 @@ export function ContactForm() {
   const [interests, setInterests] = useState([]);
   const [errors, setErrors] = useState({});
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [sendError, setSendError] = useState("");
 
   const update = (e) => {
     setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
@@ -92,14 +95,31 @@ export function ContactForm() {
   const toggle = (item) =>
     setInterests((list) => (list.includes(item) ? list.filter((i) => i !== item) : [...list, item]));
 
-  const submit = (e) => {
+  const submit = async (e) => {
     e.preventDefault();
     const next = {};
     if (!form.name.trim()) next.name = "Please tell us your name.";
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) next.email = "A valid email helps us reply.";
     if (form.message.trim().length < 10) next.message = "A sentence or two is plenty.";
     setErrors(next);
-    if (Object.keys(next).length === 0) setSent(true);
+    if (Object.keys(next).length > 0) return;
+
+    setSendError("");
+    setSending(true);
+    try {
+      await submitForm({
+        name: form.name.trim(),
+        email: form.email.trim(),
+        organisation: form.org.trim() || null,
+        topics: interests,
+        message: form.message.trim(),
+      });
+      setSent(true);
+    } catch {
+      setSendError(`Sorry, that didn't go through. Please try again, or email us at ${CONTACT.email}.`);
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -119,7 +139,7 @@ export function ContactForm() {
               <a href={`mailto:${CONTACT.email}`} className="block text-ink transition-colors hover:text-sky">
                 {CONTACT.email}
               </a>
-              <a href={`mailto:${CONTACT.careersEmail}`} className="block text-stone transition-colors hover:text-ink">
+              <a href={`mailto:${CONTACT.careersEmail}`} className="block text-ink transition-colors hover:text-sky">
                 {CONTACT.careersEmail}
               </a>
               {CONTACT.phones.map((ph) => (
@@ -217,19 +237,22 @@ export function ContactForm() {
                 <div className="flex flex-col items-start gap-5 sm:flex-row sm:flex-wrap sm:items-center sm:gap-6">
                   <button
                     type="submit"
-                    className="group relative inline-flex w-full items-center justify-center overflow-hidden rounded-full border border-ink bg-ink px-8 py-4 text-sm font-medium text-white transition-colors duration-500 hover:text-ink sm:w-auto sm:justify-start"
+                    disabled={sending}
+                    className="group relative inline-flex w-full items-center justify-center overflow-hidden rounded-full border border-ink bg-ink px-8 py-4 text-sm font-medium text-white transition-colors duration-500 hover:text-ink disabled:opacity-60 sm:w-auto sm:justify-start"
                   >
                     <span className="absolute inset-0 origin-bottom scale-y-0 bg-white transition-transform duration-500 ease-[cubic-bezier(.16,1,.3,1)] group-hover:scale-y-100" />
                     <span className="relative flex items-center">
-                      Send message
+                      {sending ? "Sending…" : "Send message"}
                       <span className="ml-3 inline-block transition-transform duration-500 ease-[cubic-bezier(.16,1,.3,1)] group-hover:translate-x-1.5">
                         →
                       </span>
                     </span>
                   </button>
-                  <p className="text-xs text-stone-soft">
-                    This is a demonstration form. No data leaves your browser.
-                  </p>
+                  {sendError && (
+                    <p role="alert" className="text-xs text-sky">
+                      {sendError}
+                    </p>
+                  )}
                 </div>
               </motion.form>
             )}
@@ -397,7 +420,7 @@ export function VisitUs() {
                 <a href={`mailto:${CONTACT.email}`} className="block text-ink transition-colors hover:text-sky">
                   {CONTACT.email}
                 </a>
-                <a href={`mailto:${CONTACT.careersEmail}`} className="block text-stone transition-colors hover:text-ink">
+                <a href={`mailto:${CONTACT.careersEmail}`} className="block text-ink transition-colors hover:text-sky">
                   {CONTACT.careersEmail}
                 </a>
                 {CONTACT.phones.map((ph) => (
