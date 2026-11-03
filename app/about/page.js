@@ -7,12 +7,15 @@ import {
   Timeline,
   VisionMission,
 } from "@/components/sections/AboutSections";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: "About",
+export const metadata = pageMetadata({
+  title: "About Us: Our Founders, Principles & Story",
   description:
     "BroadArks was founded in March 2020 by Mr. Pankaj Dutta and Dr. Kaveri Dutta to bring enterprise, technology and human development under one shared ambition.",
-};
+  path: "/about",
+  image: "/og/about.png",
+});
 
 export default function AboutPage() {
   return (

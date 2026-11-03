@@ -1,11 +1,15 @@
 import { PageHero } from "@/components/sections/Shared";
 import { ArrowLink } from "@/components/ArrowLink";
 import { TERMS_CLAUSES, TERMS_CLOSING, TERMS_DISCLAIMER, TERMS_INTRO } from "@/data/terms";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "Terms & Conditions",
-  description: "The terms and conditions for using the BroadArks Technology Private Limited website.",
-};
+  description:
+    "The terms and conditions for using the BroadArks Technology Private Limited website.",
+  path: "/terms-conditions",
+  image: "/og/terms-conditions.png",
+});
 
 export default function TermsPage() {
   return (

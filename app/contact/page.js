@@ -6,11 +6,15 @@ import {
   VisitUs,
 } from "@/components/sections/ContactSections";
 import { CONTACT } from "@/data/site";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: "Contact",
-  description: "Start a conversation with BroadArks or any of its four divisions.",
-};
+export const metadata = pageMetadata({
+  title: "Contact Us",
+  description:
+    "Start a conversation with BroadArks or any of its four divisions: learners, institutions, industry partners and investors. We reply within 2 working days.",
+  path: "/contact",
+  image: "/og/contact.png",
+});
 
 export default function ContactPage() {
   return (

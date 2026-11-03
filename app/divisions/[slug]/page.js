@@ -7,6 +7,8 @@ import {
   DivisionHero,
   OtherDivisions,
 } from "@/components/sections/DivisionSections";
+import JsonLd from "@/components/JsonLd";
+import { DIVISION_SEO, absoluteUrl, breadcrumbJsonLd, orgRef, pageMetadata } from "@/lib/seo";
 
 export function generateStaticParams() {
   return DIVISIONS.map((d) => ({ slug: d.slug }));
@@ -16,7 +18,8 @@ export async function generateMetadata({ params }) {
   const { slug } = await params;
   const d = DIVISIONS.find((x) => x.slug === slug);
   if (!d) return {};
-  return { title: d.name, description: d.summary };
+  const seo = DIVISION_SEO[d.slug] ?? { title: d.name, description: d.summary };
+  return pageMetadata({ ...seo, path: `/divisions/${d.slug}`, image: `/og/divisions-${d.slug}.png` });
 }
 
 export default async function DivisionPage({ params }) {
@@ -33,8 +36,31 @@ export default async function DivisionPage({ params }) {
     "--color-tint": d.theme.tint,
   };
 
+  const divisionJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: d.name,
+    url: d.href,
+    description: DIVISION_SEO[d.slug]?.description ?? d.summary,
+    slogan: d.tagline,
+    logo: absoluteUrl(d.logo),
+    knowsAbout: d.disciplines,
+    parentOrganization: orgRef,
+    mainEntityOfPage: absoluteUrl(`/divisions/${d.slug}`),
+  };
+
   return (
     <>
+      <JsonLd
+        data={[
+          divisionJsonLd,
+          breadcrumbJsonLd([
+            { label: "Home", href: "/" },
+            { label: "Divisions", href: "/divisions" },
+            { label: d.name, href: `/divisions/${d.slug}` },
+          ]),
+        ]}
+      />
       <div style={palette}>
         <DivisionHero d={d} />
         <DivisionBody d={d} />
