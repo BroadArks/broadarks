@@ -1,12 +1,15 @@
 import { DIVISIONS } from "@/data/site";
 import { CTABand, PageHero } from "@/components/sections/Shared";
 import { DivisionBlock } from "@/components/sections/DivisionSections";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: "Divisions",
+export const metadata = pageMetadata({
+  title: "Our Divisions: Skills, AI, Craft & Social Impact",
   description:
-    "Y&Now, Vihanga.ai, Karigreen and BroadArks Foundation: four divisions, one shared ambition.",
-};
+    "Y&Now, Vihanga.ai, Karigreen and BroadArks Foundation: future skills, advanced technology, responsible commerce and social development under one ambition.",
+  path: "/divisions",
+  image: "/og/divisions.png",
+});
 
 export default function DivisionsPage() {
   return (

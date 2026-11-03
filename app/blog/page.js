@@ -1,12 +1,15 @@
 import { POSTS } from "@/data/site";
 import { CTABand, PageHero, PostCard } from "@/components/sections/Shared";
 import { FeaturedPost } from "@/components/sections/BlogSections";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: "Journal",
+export const metadata = pageMetadata({
+  title: "Journal: Insights on Skills, Technology & Craft",
   description:
-    "Periodically curated perspectives from across the BroadArks divisions on advanced competencies, technology, artisanal mastery and long-term value creation.",
-};
+    "Perspectives from across the BroadArks divisions on future skills, advanced technology, artisanal mastery and long-term value creation.",
+  path: "/blog",
+  image: "/og/blog.png",
+});
 
 export default function BlogPage() {
   const [featured, ...rest] = POSTS;

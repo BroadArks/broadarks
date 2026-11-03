@@ -1,11 +1,14 @@
 import { PageHero } from "@/components/sections/Shared";
 import { PRIVACY_META, PRIVACY_SECTIONS } from "@/data/privacy";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "Privacy Policy",
   description:
     "How BroadArks Technology Private Limited collects, uses, shares and protects personal information on broadarks.com and in its services.",
-};
+  path: "/privacy",
+  image: "/og/privacy.png",
+});
 
 export default function PrivacyPage() {
   return (
