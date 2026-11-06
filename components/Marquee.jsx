@@ -13,7 +13,8 @@ export default function Marquee({ items, speed = 28, reverse = false, className 
         transition={{ duration: speed, ease: "linear", repeat: Infinity }}
       >
         {track.map((item, i) => (
-          <span key={i} className="flex shrink-0 items-center whitespace-nowrap">
+          // The second half only exists to make the loop seamless; hide it from screen readers.
+          <span key={i} aria-hidden={i >= items.length || undefined} className="flex shrink-0 items-center whitespace-nowrap">
             <span className="px-6 lg:px-9">{item}</span>
             <span aria-hidden className="text-sky">{separator}</span>
           </span>

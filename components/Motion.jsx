@@ -105,9 +105,12 @@ export function HighlightParagraph({ text, className = "" }) {
         const start = i / words.length;
         const end = start + 1 / words.length;
         return (
-          <HighlightWord key={`${word}-${i}`} progress={scrollYProgress} range={[start, end]}>
-            {word}
-          </HighlightWord>
+          <Fragment key={`${word}-${i}`}>
+            <HighlightWord progress={scrollYProgress} range={[start, end]}>
+              {word}
+            </HighlightWord>
+            {i < words.length - 1 ? " " : ""}
+          </Fragment>
         );
       })}
     </p>
@@ -115,12 +118,13 @@ export function HighlightParagraph({ text, className = "" }) {
 }
 
 function HighlightWord({ children, progress, range }) {
-  const opacity = useTransform(progress, range, [0.15, 1]);
+  // Single copy of the word so crawlers and screen readers read clean text.
+  // 0.28 matches the old look of a 0.15 ghost layer stacked under a 0.15 word.
+  const opacity = useTransform(progress, range, [0.28, 1]);
   return (
-    <span className="relative mr-[0.28em] inline-block">
-      <span className="absolute inset-0 opacity-15">{children}</span>
-      <motion.span style={{ opacity }}>{children}</motion.span>
-    </span>
+    <motion.span className="mr-[0.28em] inline-block" style={{ opacity }}>
+      {children}
+    </motion.span>
   );
 }
 

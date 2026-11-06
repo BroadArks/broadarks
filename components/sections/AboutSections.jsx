@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion, useMotionValueEvent, useScroll, useTransform } from "framer-motion";
-import { useRef, useState } from "react";
+import { Fragment, useRef, useState } from "react";
 import { SectionLabel } from "@/components/Section";
 import { ArrowLink } from "@/components/ArrowLink";
 import {
@@ -172,7 +172,12 @@ function VMStatement({ item, i, progress }) {
         {words.map((w, j) => {
           const span = b - a - 0.14;
           const start = a + 0.04 + (span * j) / words.length;
-          return <VMWord key={`${w}-${j}`} word={w} progress={progress} range={[start, start + span / words.length]} />;
+          return (
+            <Fragment key={`${w}-${j}`}>
+              <VMWord word={w} progress={progress} range={[start, start + span / words.length]} />
+              {j < words.length - 1 ? " " : ""}
+            </Fragment>
+          );
         })}
       </p>
     </motion.div>
@@ -180,12 +185,12 @@ function VMStatement({ item, i, progress }) {
 }
 
 function VMWord({ word, progress, range }) {
-  const opacity = useTransform(progress, range, [0, 1]);
+  // Single copy of the word (no ghost layer) so the text reads cleanly in HTML.
+  const opacity = useTransform(progress, range, [0.2, 1]);
   return (
-    <span className="relative mr-[0.28em] inline-block">
-      <span className="absolute inset-0 opacity-20">{word}</span>
-      <motion.span style={{ opacity }}>{word}</motion.span>
-    </span>
+    <motion.span className="mr-[0.28em] inline-block" style={{ opacity }}>
+      {word}
+    </motion.span>
   );
 }
 
